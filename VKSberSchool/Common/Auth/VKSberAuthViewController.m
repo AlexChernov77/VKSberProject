@@ -12,6 +12,7 @@
 #import "VkSberProfileViewController.h"
 #import "VkSberFriendsViewController.h"
 #import "NSUserDefaultsService.h"
+#import "Constant.h"
 
 @interface VKSberAuthViewController ()<WKNavigationDelegate>
 
@@ -31,7 +32,7 @@
 	self.authWebView = [[WKWebView alloc] initWithFrame:self.view.frame];
 	[self.view addSubview:self.authWebView];
 	self.authWebView.navigationDelegate = self;
-	[self.authWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://oauth.vk.com/authorize?client_id=6972485&scope=wall,offline&redirect_uri=oauth.vk.com/blank.html&display=touch&response_type=token"]]];
+	[self.authWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:VkSberAuthURL]]];
 	[self.view.window makeKeyAndVisible];
 }
 

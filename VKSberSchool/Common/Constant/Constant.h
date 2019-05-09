@@ -12,7 +12,7 @@
 #pragma mark - Base URL
 
 extern NSString *const VkSberBaseUrl; /**< основвной url */
-
+extern NSString *const VkSberAuthURL; /**< url авторизации */
 
 #pragma mark - Methods
 
@@ -28,4 +28,5 @@ extern NSString *const VkSberPhotoSizes; /**< Токен авторизации 
 extern NSString *const VkSberCount; /**< Токен авторизации */
 extern NSString *const VkSberOffset; /**< Токен авторизации */
 extern NSString *const VkSberFields; /**< Токен авторизации */
+
 
