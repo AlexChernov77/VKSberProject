@@ -15,11 +15,11 @@
 
 @property(weak, nonatomic) id<SwipableViewsDataSource> dataSource;
 @property(weak, nonatomic) id<SwipableViewsDelegate> delegate;
-    
-    
+
+
 - (void)registerNib:(NSMutableArray *)views;
--(void)handleAction : (SwipeDirection *) direction andView: (UIView *)view;
+-(void)handleAction : (SwipeDirection ) direction andView: (UIView *)view;
 -(void)reloadData;
-    
+
 @end
 

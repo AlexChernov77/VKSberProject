@@ -13,7 +13,7 @@
 
 @interface AutomaticSwipeOperation()
 
-@property (nonatomic, assign) SwipeDirection *direction;
+@property (nonatomic, assign) SwipeDirection direction;
 @property (nonatomic, assign) VKSBSwipableView *superview;
 @property (nonatomic, copy) void (^success)(void);
 @property (nonatomic, assign) UIView *view;
@@ -22,15 +22,15 @@
 
 @implementation AutomaticSwipeOperation
 
--(instancetype)initWithDirection : (SwipeDirection *) direction
-			   andSuccesBlock : (void(^) (void)) success
-			   andSuperView : (VKSBSwipableView *) superView
+-(instancetype)initWithDirection : (SwipeDirection) direction
+				  andSuccesBlock : (void(^) (void)) success
+					andSuperView : (VKSBSwipableView *) superView
 {
 	if (self = [super init])
 	{
-		self.success = success;
-		self.superview = superView;
-		self.direction = direction;
+		_success = success;
+		_superview = superView;
+		_direction = direction;
 	}
 	return self;
 }
@@ -43,9 +43,9 @@
 		self.view = self.superview.subviews.lastObject;
 		
 		CGPoint newCenter = self.direction == left ? CGPointMake(self.view.center.x - 500, self.view.center.y) :
-													  CGPointMake(self.view.center.x + 500, self.view.center.y);
+		CGPointMake(self.view.center.x + 500, self.view.center.y);
 		
-
+		
 		[UIView animateWithDuration:0.5 animations:^{
 			self.view.center = newCenter;
 			double centerDiff = self.view.center.x - (self.superview.bounds.size.width / 2.0);

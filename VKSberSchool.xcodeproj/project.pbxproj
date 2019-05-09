@@ -18,6 +18,15 @@
 		1F17642C22403E330085818C /* VKSBSwipableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F17642B22403E330085818C /* VKSBSwipableView.m */; };
 		7EE219AF227A594A00BCDDAB /* AutomaticSwipeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE219AE227A594900BCDDAB /* AutomaticSwipeOperation.m */; };
 		7EE219B2227A68E000BCDDAB /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE219B1227A68E000BCDDAB /* CustomView.m */; };
+		7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */; };
+		7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */; };
+		7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D622843B5D004E3535 /* VkAuthService.m */; };
+		7EFB95DB22843B9C004E3535 /* NSUserDefaultsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95DA22843B9C004E3535 /* NSUserDefaultsService.m */; };
+		7EFB95DE22843C54004E3535 /* VKSberAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95DD22843C54004E3535 /* VKSberAuthViewController.m */; };
+		7EFB95E122843CBC004E3535 /* VkSberUserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E022843CBC004E3535 /* VkSberUserInfoService.m */; };
+		7EFB95E522843CF8004E3535 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E422843CF8004E3535 /* NetworkHelper.m */; };
+		7EFB95E822843D1A004E3535 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E722843D1A004E3535 /* NetworkService.m */; };
+		7EFB95EC22843D49004E3535 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95EB22843D49004E3535 /* Constant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +53,7 @@
 		1F17640E2240323B0085818C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F1764142240323B0085818C /* VKSberSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKSberSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1764182240323B0085818C /* VKSberSchoolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKSberSchoolTests.m; sourceTree = "<group>"; };
-		1F17641A2240323B0085818C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F17641A2240323B0085818C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = VKSberSchoolTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		1F17642822403C640085818C /* SwipableViewsDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipableViewsDataSource.h; sourceTree = "<group>"; };
 		1F17642922403CFA0085818C /* SwipableViewsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipableViewsDelegate.h; sourceTree = "<group>"; };
 		1F17642A22403E330085818C /* VKSBSwipableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKSBSwipableView.h; sourceTree = "<group>"; };
@@ -54,6 +63,24 @@
 		7EE219AE227A594900BCDDAB /* AutomaticSwipeOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomaticSwipeOperation.m; sourceTree = "<group>"; };
 		7EE219B0227A68E000BCDDAB /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		7EE219B1227A68E000BCDDAB /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsViewController.h; sourceTree = "<group>"; };
+		7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsViewController.m; sourceTree = "<group>"; };
+		7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfileViewController.h; sourceTree = "<group>"; };
+		7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberProfileViewController.m; sourceTree = "<group>"; };
+		7EFB95D522843B5D004E3535 /* VkAuthService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkAuthService.h; sourceTree = "<group>"; };
+		7EFB95D622843B5D004E3535 /* VkAuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkAuthService.m; sourceTree = "<group>"; };
+		7EFB95D922843B9C004E3535 /* NSUserDefaultsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultsService.h; sourceTree = "<group>"; };
+		7EFB95DA22843B9C004E3535 /* NSUserDefaultsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsService.m; sourceTree = "<group>"; };
+		7EFB95DC22843C54004E3535 /* VKSberAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKSberAuthViewController.h; sourceTree = "<group>"; };
+		7EFB95DD22843C54004E3535 /* VKSberAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKSberAuthViewController.m; sourceTree = "<group>"; };
+		7EFB95DF22843CBC004E3535 /* VkSberUserInfoService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberUserInfoService.h; sourceTree = "<group>"; };
+		7EFB95E022843CBC004E3535 /* VkSberUserInfoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberUserInfoService.m; sourceTree = "<group>"; };
+		7EFB95E322843CF8004E3535 /* NetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		7EFB95E422843CF8004E3535 /* NetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		7EFB95E622843D1A004E3535 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		7EFB95E722843D1A004E3535 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		7EFB95EA22843D49004E3535 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		7EFB95EB22843D49004E3535 /* Constant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +122,9 @@
 		1F1763FB224032380085818C /* VKSberSchool */ = {
 			isa = PBXGroup;
 			children = (
+				7EFB95D322843B18004E3535 /* VkSberProfile */,
+				7EFB95D222843B06004E3535 /* Common */,
+				7EFB95CD22843ACF004E3535 /* VkSberFriends */,
 				1F176426224032880085818C /* Custom Views */,
 				1F1763FC224032380085818C /* AppDelegate.h */,
 				1F1763FD224032380085818C /* AppDelegate.m */,
@@ -116,8 +146,8 @@
 		1F1764172240323B0085818C /* VKSberSchoolTests */ = {
 			isa = PBXGroup;
 			children = (
-				1F1764182240323B0085818C /* VKSberSchoolTests.m */,
 				1F17641A2240323B0085818C /* Info.plist */,
+				1F1764182240323B0085818C /* VKSberSchoolTests.m */,
 			);
 			path = VKSberSchoolTests;
 			sourceTree = "<group>";
@@ -141,6 +171,77 @@
 				1F17642922403CFA0085818C /* SwipableViewsDelegate.h */,
 			);
 			path = interfaces;
+			sourceTree = "<group>";
+		};
+		7EFB95CD22843ACF004E3535 /* VkSberFriends */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */,
+				7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */,
+			);
+			path = VkSberFriends;
+			sourceTree = "<group>";
+		};
+		7EFB95D222843B06004E3535 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95E922843D3A004E3535 /* Constant */,
+				7EFB95D822843B89004E3535 /* Services */,
+				7EFB95D422843B4B004E3535 /* Auth */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7EFB95D322843B18004E3535 /* VkSberProfile */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */,
+				7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */,
+			);
+			path = VkSberProfile;
+			sourceTree = "<group>";
+		};
+		7EFB95D422843B4B004E3535 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95D522843B5D004E3535 /* VkAuthService.h */,
+				7EFB95D622843B5D004E3535 /* VkAuthService.m */,
+				7EFB95DC22843C54004E3535 /* VKSberAuthViewController.h */,
+				7EFB95DD22843C54004E3535 /* VKSberAuthViewController.m */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7EFB95D822843B89004E3535 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95E222843CE8004E3535 /* NetworkService */,
+				7EFB95D922843B9C004E3535 /* NSUserDefaultsService.h */,
+				7EFB95DA22843B9C004E3535 /* NSUserDefaultsService.m */,
+				7EFB95DF22843CBC004E3535 /* VkSberUserInfoService.h */,
+				7EFB95E022843CBC004E3535 /* VkSberUserInfoService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7EFB95E222843CE8004E3535 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95E322843CF8004E3535 /* NetworkHelper.h */,
+				7EFB95E422843CF8004E3535 /* NetworkHelper.m */,
+				7EFB95E622843D1A004E3535 /* NetworkService.h */,
+				7EFB95E722843D1A004E3535 /* NetworkService.m */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		7EFB95E922843D3A004E3535 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95EA22843D49004E3535 /* Constant.h */,
+				7EFB95EB22843D49004E3535 /* Constant.m */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,13 +345,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFB95E122843CBC004E3535 /* VkSberUserInfoService.m in Sources */,
 				7EE219AF227A594A00BCDDAB /* AutomaticSwipeOperation.m in Sources */,
+				7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */,
 				1F176407224032380085818C /* VKSberSchool.xcdatamodeld in Sources */,
+				7EFB95E822843D1A004E3535 /* NetworkService.m in Sources */,
+				7EFB95E522843CF8004E3535 /* NetworkHelper.m in Sources */,
 				1F176401224032380085818C /* ViewController.m in Sources */,
 				1F17640F2240323B0085818C /* main.m in Sources */,
 				7EE219B2227A68E000BCDDAB /* CustomView.m in Sources */,
 				1F17642C22403E330085818C /* VKSBSwipableView.m in Sources */,
+				7EFB95DE22843C54004E3535 /* VKSberAuthViewController.m in Sources */,
 				1F1763FE224032380085818C /* AppDelegate.m in Sources */,
+				7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */,
+				7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */,
+				7EFB95DB22843B9C004E3535 /* NSUserDefaultsService.m in Sources */,
+				7EFB95EC22843D49004E3535 /* Constant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

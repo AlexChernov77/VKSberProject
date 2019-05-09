@@ -10,19 +10,19 @@
 
 
 @interface VKSBSwipableView()
-    
+
 @property (nonatomic) UINib* nib;
 @property (copy, nonatomic) NSArray* visibleView;
-@property (assign, nonatomic) NSUInteger visibleIndex;
-@property (assign, nonatomic) NSUInteger modelsCount;
-@property (assign, nonatomic) NSUInteger visivleReuseViewIndex;
+@property (assign, nonatomic) NSInteger visibleIndex;
+@property (assign, nonatomic) NSInteger modelsCount;
+@property (assign, nonatomic) NSInteger visivleReuseViewIndex;
 @property NSOperationQueue* operationQueue;
 @property (strong, nonatomic) UIView *swipeView;
 @property (nonatomic, strong) NSMutableArray *views;
-    
+
 -(void)setup;
 -(void)renderViews: (NSInteger) number index: (NSInteger) startIndex;
-    
+
 @end
 
 @implementation VKSBSwipableView
@@ -31,13 +31,13 @@
 {
 	self.views = views;
 }
-    
+
 - (void)setDataSource:(id<SwipableViewsDataSource>)dataSource
 {
 	_dataSource = dataSource;
-    [self setup];
+	[self setup];
 }
-    
+
 -(void)setup
 {
 	self.clipsToBounds = NO;
@@ -61,36 +61,36 @@
 
 -(void)reloadData
 {
-    if (self.modelsCount >= [self.dataSource numbersOfViews]) {
-        return;
-    }
-    NSInteger dataDiff = [self.dataSource numbersOfViews] - self.modelsCount;
-    BOOL viewsDiff = dataDiff > 3 - [self.subviews count] ? 3 - [self.subviews count]  : dataDiff;
-    
-    self.modelsCount = [self.dataSource numbersOfViews];
-    [self renderViews:viewsDiff index:self.visibleIndex + 1];
+	if (self.modelsCount >= [self.dataSource numbersOfViews]) {
+		return;
+	}
+	NSInteger dataDiff = [self.dataSource numbersOfViews] - self.modelsCount;
+	BOOL viewsDiff = dataDiff > 3 - [self.subviews count] ? 3 - [self.subviews count]  : dataDiff;
+	
+	self.modelsCount = [self.dataSource numbersOfViews];
+	[self renderViews:viewsDiff index:self.visibleIndex + 1];
 }
 
-    
-    
+
+
 -(void)renderViews:(NSInteger)number index:(NSInteger)startIndex
 {
-    NSMutableArray* viewsArray = [NSMutableArray new];
-    NSInteger indexCounter = startIndex;
-    
-    for (int i = 0; i < number; i++)
-    {
-        UIView* rawView = self.views[i];
-        
-        [self.dataSource view:rawView atIndex:indexCounter];
-        rawView.frame = self.bounds;
-        [self insertSubview:rawView atIndex:0];
-        [viewsArray addObject:rawView];
-        indexCounter += 1;
-    }
-    
-    self.visibleView = [viewsArray count] > 0 ?  viewsArray : self.visibleView;
-    
+	NSMutableArray* viewsArray = [NSMutableArray new];
+	NSInteger indexCounter = startIndex;
+	
+	for (int i = 0; i < number; i++)
+	{
+		UIView* rawView = self.views[i];
+		
+		[self.dataSource view:rawView atIndex:indexCounter];
+		rawView.frame = self.bounds;
+		[self insertSubview:rawView atIndex:0];
+		[viewsArray addObject:rawView];
+		indexCounter += 1;
+	}
+	
+	self.visibleView = [viewsArray count] > 0 ?  viewsArray : self.visibleView;
+	
 	[self addRecognizers];
 }
 
@@ -154,7 +154,7 @@
 	}
 }
 
--(void)handleAction : (SwipeDirection *) direction andView: (UIView *)view
+-(void)handleAction : (SwipeDirection) direction andView: (UIView *)view
 {
 	[self.delegate willSwiped:direction atIndex:self.visibleIndex];
 	[view removeFromSuperview];
@@ -177,7 +177,7 @@
 	self.visibleIndex += 1;
 }
 
--(void)autoSwipe : (SwipeDirection *) direction
+-(void)autoSwipe : (SwipeDirection) direction
 {
 	self.operationQueue.maxConcurrentOperationCount = 1;
 	

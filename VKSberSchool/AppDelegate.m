@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "VkAuthService.h"
+#import "VKSberAuthViewController.h"
+#import <SafariServices/SafariServices.h>
 
 @interface AppDelegate ()
 
@@ -16,8 +19,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
+	
+	VKSberAuthViewController *rootViewController = [VKSberAuthViewController new];
+	
+	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+	
+	self.window.rootViewController = rootViewController;
+	self.window.backgroundColor = [UIColor whiteColor];
+	[self.window makeKeyAndVisible];
+	
+	return YES;
 }
 
 

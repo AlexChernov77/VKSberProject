@@ -8,12 +8,12 @@
 
 typedef enum
 {
-    left,
-    right
+	left,
+	right
 } SwipeDirection;
 
 @protocol SwipableViewsDelegate <NSObject>
-    
--(void) willSwiped: (SwipeDirection* ) direction atIndex: (NSInteger) index;
-    
+
+-(void) willSwiped: (SwipeDirection) direction atIndex: (NSInteger) index;
+
 @end

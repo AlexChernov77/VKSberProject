@@ -47,7 +47,7 @@
 }
 
 
-- (void)willSwiped:(SwipeDirection *)direction atIndex:(NSInteger)index
+- (void)willSwiped:(SwipeDirection )direction atIndex:(NSInteger)index
 {
 	
 }
