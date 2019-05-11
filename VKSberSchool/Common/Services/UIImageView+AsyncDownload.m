@@ -1,33 +1,28 @@
 //
-//  NetworkService.m
+//  UIImageView+AsyncDownload.m
 //  VKSberSchool
 //
-//  Created by Александр on 09/05/2019.
+//  Created by Александр on 11/05/2019.
 //  Copyright © 2019 Александр. All rights reserved.
 //
 
-#import "NetworkService.h"
+#import "UIImageView+AsyncDownload.h"
 
-@implementation NetworkService
+@implementation UIImageView (AsyncDownload)
 
-- (void)load: (NSURLRequest *) request
-successBlock :(void (^) (NSDictionary *data)) success
-failureBlock : (void (^) (NSInteger code)) failure
+- (void)loadImage: (NSString *) urlString
 {
+	NSURL *url = [[NSURL alloc] initWithString:urlString];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	NSURLSession *session;
 	session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-	
 	NSURLSessionDataTask *sessionDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (data != NULL)
 		{
-			NSDictionary *temp = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
 			dispatch_async(dispatch_get_main_queue(), ^{
-			success(temp);
+				UIImage *image = [[UIImage alloc] initWithData:data];
+				self.image = image;
 			});
-		}
-		else
-		{
-			failure(error.code);
 		}
 	}];
 	[sessionDataTask resume];

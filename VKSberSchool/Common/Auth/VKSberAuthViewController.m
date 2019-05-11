@@ -12,6 +12,7 @@
 #import "VkSberProfileViewController.h"
 #import "VkSberFriendsViewController.h"
 #import "NSUserDefaultsService.h"
+#import "VkSberProfilePresenter.h"
 #import "Constant.h"
 
 @interface VKSberAuthViewController ()<WKNavigationDelegate>
@@ -58,6 +59,9 @@
 		VkSberProfileViewController *profileCiewController = [[VkSberProfileViewController alloc] init];
 		UINavigationController *navigationProfileController = [[UINavigationController alloc] initWithRootViewController:profileCiewController];
 		
+		VkSberProfilePresenter *presenter = [VkSberProfilePresenter new];
+		profileCiewController.presenterOutput = presenter;
+		
 		VkSberFriendsViewController *friendsviewController = [[VkSberFriendsViewController alloc] init];
 		UINavigationController *navigationFriendsController = [[UINavigationController alloc] initWithRootViewController:friendsviewController];
 		
@@ -74,7 +78,7 @@
 		tabBarViewController.tabBar.barTintColor = [UIColor blackColor];
 		
 		tabBarViewController.viewControllers = viewControllerArray;
-		[self presentViewController:tabBarViewController animated:YES completion: nil];
+		[self presentViewController:tabBarViewController animated:NO completion: nil];
 	} failureBlock:^{
 		
 	} authToken:token];

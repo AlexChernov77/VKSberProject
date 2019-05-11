@@ -7,20 +7,24 @@
 //
 
 #import "VkSberProfileViewController.h"
-#import "VkSberUserInfoService.h"
-#import "VKSBSwipableView.h"
-#import "CustomView.h"
+#import "VkSberCustomUILabel.h"
+#import "VkSberProfileModel.h"
+#import "VkSberEmptyLoadingView.h"
+#import "UIImageView+AsyncDownload.h"
+#import "VkSberPhotoAlbumViewController.h"
 
 @interface VkSberProfileViewController ()
 
-@property (nonatomic, weak) UIImageView *avatarImage;
-@property (nonatomic, weak) UILabel *userNamelabel;
-@property (nonatomic, weak) UILabel *graduateLabel;
-@property (nonatomic, weak) UILabel *bdayLabel;
-@property (nonatomic,strong) VkSberUserInfoService *service;
-@property (strong, nonatomic)  VKSBSwipableView *exampleView;
-@property (strong, nonatomic) CustomView *customView;
-@property (nonatomic, strong) NSMutableArray *views;
+@property (nonatomic, strong) UIImageView *avatarImage;
+@property (nonatomic, strong) UILabel *userNamelabel;
+@property (nonatomic, strong) UILabel *graduateLabel;
+@property (nonatomic, strong) UILabel *bdayLabel;
+@property (nonatomic, strong) VkSberCustomUILabel *bdayTitleLabel;
+@property (nonatomic, strong) VkSberCustomUILabel *graduateTitleLabel;
+@property (nonatomic, strong) UILabel *cityLabel;
+@property (nonatomic, strong) VkSberCustomUILabel *cityTitleLabel;
+@property (nonatomic, strong) UIButton *albumButton;
+@property (nonatomic, strong) VkSberEmptyLoadingView *loadingView;
 
 @end
 
@@ -29,52 +33,151 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-	self.service = [VkSberUserInfoService new];
-	[self.service getMyProfileInfo:^(NSDictionary *data) {
-		
-	} failureBlock:^(NSInteger code) {
-		
-	}];
+	[self setupUI];
 }
-
 
 -(void)setupUI
 {
+	[self setupNavigationBar];
+	[self setupAvatarImage];
+	[self setupAlbumButton];
+	[self setupUserNameLabel];
+	[self setupBdayLabel];
+	[self setupCityLabel];
+	[self setupGraduateLabel];
+	[self setupLoadingView];
+	[self gerUserRequest];
+}
+
+
+#pragma mark - Action
+
+
+-(void)perfomToAlbum
+{
+	VkSberPhotoAlbumViewController *viewController = [VkSberPhotoAlbumViewController new];
+	[self.navigationController pushViewController:viewController animated:NO];
+}
+
+#pragma mark - Setup
+
+
+-(void)setupNavigationBar
+{
+	self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+	self.navigationItem.title = @"Profile";
+	self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+																   [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+	self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
+}
+
+-(void)setupLoadingView
+{
+	self.loadingView = [[VkSberEmptyLoadingView alloc] initWithFrame:self.view.frame];
+	
+	[self.view addSubview:self.loadingView];
+	[self.view bringSubviewToFront:self.loadingView];
+	self.loadingView.hidden = YES;
+}
+
+-(void)setupAvatarImage
+{
+	NSInteger vertivcalMargin = [[UIScreen mainScreen]bounds].size.width <= 320 ? 94 : 104;
+	
+	self.avatarImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, vertivcalMargin, CGRectGetWidth(self.view.frame) - 40, CGRectGetHeight(self.view.frame) / 2.5)];
+	self.avatarImage.layer.borderWidth = 2;
+	self.avatarImage.contentMode = UIViewContentModeScaleAspectFill;
+	self.avatarImage.layer.borderColor = UIColor.blackColor.CGColor;
+	self.avatarImage.backgroundColor = UIColor.blueColor;
+	self.avatarImage.layer.cornerRadius = 10;
+	self.avatarImage.clipsToBounds = YES;
+	
+	[self.view addSubview:self.avatarImage];
+}
+
+-(void)setupAlbumButton
+{
+	self.albumButton = [[UIButton alloc] initWithFrame:self.avatarImage.frame];
+	[self.albumButton addTarget:self action:@selector(perfomToAlbum) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.view addSubview:self.albumButton];
+}
+
+-(void)setupUserNameLabel
+{
+	self.userNamelabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.avatarImage.frame) + 30,
+																   CGRectGetWidth(self.view.frame), 25)];
+	self.userNamelabel.textColor = UIColor.whiteColor;
+	self.userNamelabel.font = [UIFont boldSystemFontOfSize:22];
+	[self.view addSubview:self.userNamelabel];
+}
+
+-(void)setupBdayLabel
+{
+	self.bdayTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.userNamelabel.frame) + 20, 120, 15)
+									 textColor: UIColor.lightGrayColor
+										  font:[UIFont systemFontOfSize:15]
+														   textLabel:@"Дата рождения:"];
+	
+	self.bdayLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.bdayTitleLabel.frame) + 10, CGRectGetMaxY(self.userNamelabel.frame) + 20, CGRectGetWidth(self.view.frame), 20)];
+	self.bdayLabel.textColor = UIColor.whiteColor;
+	self.bdayLabel.font = [UIFont boldSystemFontOfSize:15];
+	
+	[self.view addSubview:self.bdayTitleLabel];
+	[self.view addSubview:self.bdayLabel];
+}
+
+-(void)setupCityLabel
+{
+	self.cityTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.bdayTitleLabel.frame) + 20, 120, 15)
+												  textColor: UIColor.lightGrayColor
+													   font:[UIFont systemFontOfSize:15]
+												  textLabel:@"Город:"];
+	
+	self.cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.cityTitleLabel.frame) + 10, CGRectGetMaxY(self.bdayTitleLabel.frame) + 20, CGRectGetWidth(self.view.frame), 20)];
+	self.cityLabel.textColor = UIColor.whiteColor;
+	self.cityLabel.font = [UIFont boldSystemFontOfSize:15];
+	
+	[self.view addSubview:self.cityTitleLabel];
+	[self.view addSubview:self.cityLabel];
+}
+
+-(void)setupGraduateLabel
+{
+	self.graduateTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.cityTitleLabel.frame) + 20, 120, 15)
+												  textColor: UIColor.lightGrayColor
+													   font:[UIFont systemFontOfSize:15]
+												  textLabel:@"Образование:"];
+	
+	self.graduateLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.graduateTitleLabel.frame) + 10, CGRectGetMaxY(self.cityTitleLabel.frame) + 20, CGRectGetWidth(self.view.frame), 20)];
+	self.graduateLabel.textColor = UIColor.whiteColor;
+	self.graduateLabel.font = [UIFont boldSystemFontOfSize:15];
+	
+	[self.view addSubview:self.graduateTitleLabel];
+	[self.view addSubview:self.graduateLabel];
+}
+
+
+#pragma mark - Request
+
+
+-(void)gerUserRequest
+{
+	self.loadingView.hidden = NO;
+	[self.presenterOutput loadUser:^(VkSberProfileModel *user) {
+		[self updateUI:user];
+		self.loadingView.hidden = YES;
+	}];
 	
 }
-//
-//- (void)viewDidLoad {
-//	[super viewDidLoad];
-//		self.exampleView = [VKSBSwipableView new];
-//		self.exampleView.frame = CGRectMake(self.view.frame.size.width/2 - 40, self.view.frame.size.height/2 - 40, 80, 80);
-//		[self.view addSubview:self.exampleView];
-//	self.views = [NSMutableArray new];
-//	for(int i = 0; i < 3; i++)
-//	{
-//		self.customView = [CustomView new];
-//		self.customView.backgroundColor = UIColor.blueColor;
-//		[self.views addObject:self.customView];
-//	}
-//	[self.exampleView registerNib:self.views];
-//	self.exampleView.dataSource = self;
-//	self.exampleView.delegate = self;
-//}
-//
-//
-//- (void)willSwiped:(SwipeDirection )direction atIndex:(NSInteger)index
-//{
-//
-//}
-//
-//- (NSInteger)numbersOfViews
-//{
-//	return 10;
-//}
-//
-//- (void)view:(UIView *)view atIndex:(NSInteger)index
-//{
-//
-//}
+
+-(void)updateUI: (VkSberProfileModel *) user
+{
+	self.userNamelabel.text = user.userName;
+	self.cityLabel.text = user.city;
+	self.bdayLabel.text = user.bDay;
+	self.graduateLabel.text = user.education;
+//	[self.avatarImage loadImage:user.photoURL];
+}
 
 @end

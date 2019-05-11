@@ -21,4 +21,4 @@ NSString *const VkSberCount = @"count";
 NSString *const VkSberPhotoSizes = @"photo_sizes";
 NSString *const VkSberFields = @"fields";
 
-NSString *const VkSberAuthURL = @"http://oauth.vk.com/authorize?client_id=6972485&scope=wall,offline&redirect_uri=oauth.vk.com/blank.html&display=touch&response_type=token";
+NSString *const VkSberAuthURL = @"http://oauth.vk.com/authorize?client_id=6978175&scope=photos,friends&redirect_uri=oauth.vk.com/blank.html&display=touch&response_type=token";

@@ -1,19 +1,18 @@
 //
-//  VkSberUserInfoService.m
+//  VkSberPhotosRequestService.m
 //  VKSberSchool
 //
-//  Created by Александр on 09/05/2019.
+//  Created by Александр on 10/05/2019.
 //  Copyright © 2019 Александр. All rights reserved.
 //
-
-#import "VkSberUserInfoService.h"
+#import "VkSberPhotosRequestService.h"
 #import "NSUserDefaultsService.h"
 #import "NetworkService.h"
 #import "NetworkHelper.h"
-#import "VkSberProfileModel.h"
+#import "VkSberAlbumModel.h"
 #import "Constant.h"
 
-@interface VkSberUserInfoService()
+@interface VkSberPhotosRequestService()
 
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 @property (strong, nonatomic) NetworkService *nerworkService;
@@ -21,7 +20,7 @@
 
 @end
 
-@implementation VkSberUserInfoService
+@implementation VkSberPhotosRequestService
 
 -(instancetype) init
 {
@@ -34,21 +33,23 @@
 	return self;
 }
 
--(void)getMyProfileInfo: (void (^) (NSDictionary *data)) success
+-(void)getMyAlbum: (void (^) (NSDictionary *data)) success
 		  failureBlock : (void (^) (NSInteger code)) failure
 {
 	
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	
-	[dictionary setObject:@"bdate,education,photo_max,city" forKey:VkSberFields];
+	[dictionary setObject: @(10) forKey:VkSberCount];
+	[dictionary setObject: @(0) forKey:VkSberPhotoSizes];
+	[dictionary setObject: @(0) forKey:VkSberOffset];
 	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
 	
-	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberUserGet withParametrs:dictionary];
+	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberPhotosGet withParametrs:dictionary];
 	
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }
 
--(void)getUserInfo: (NSString *) userID
+-(void)getFriendsPhoto: (NSString *) userID
 	 successBlock : (void (^) (NSDictionary *data)) success
 	 failureBlock : (void (^) (NSInteger code)) failure
 {
@@ -56,7 +57,9 @@
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	
 	[dictionary setObject: userID forKey:VkSberUserId];
-	[dictionary setObject:@"bdate,education,photo_max,city" forKey:VkSberFields];
+	[dictionary setObject: @(1) forKey:VkSberCount];
+	[dictionary setObject: @(0) forKey:VkSberPhotoSizes];
+	[dictionary setObject: @(0) forKey:VkSberOffset];
 	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
 	
 	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberUserGet withParametrs:dictionary];
@@ -64,25 +67,25 @@
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }
 
--(void)getUsers: (void (^) (NSArray *urlArray)) completion
+-(void)getPhotos: (void (^) (NSArray *urlArray)) completion
 {
-	[self getMyProfileInfo:^(NSDictionary *data) {
+	[self getMyAlbum:^(NSDictionary *data) {
 		NSMutableArray *urlArray = [NSMutableArray new];
-		NSDictionary *user = data[@"response"];
-		
-		for (NSDictionary *imageJSON in user)
+		NSDictionary *photo = data[@"response"][@"items"];
+		for (NSDictionary *imageJSON in photo)
 		{
-			NSString *name = imageJSON[@"first_name"];
-			NSString *url_m = imageJSON[@"photo_max"];
-			NSString *education = imageJSON[@"university_name"];
-			NSString *bday = imageJSON[@"bdate"];
-			NSString *lastName = imageJSON[@"last_name"];
-			NSString *city = imageJSON[@"city"];
-			NSString *userName = [NSString stringWithFormat: @"%@ %@", name, lastName];
-			
-			NSURL *url = [[NSURL alloc] initWithString:url_m];
-			VkSberProfileModel *model = [[VkSberProfileModel alloc] initWithUserName:userName birthday:bday city:city educations:education url:url];
-			[urlArray addObject:model];
+
+		NSArray *photo = imageJSON[@"sizes"];
+		for (int i = 0 ; i < photo.count ; i++)
+		{
+			if ([photo[i][@"type"]  isEqual: @"z"])
+			{
+				NSString *url = (NSString *)photo[i][@"url"];
+				
+				VkSberAlbumModel *model = [[VkSberAlbumModel alloc] initWithURL:url];
+				[urlArray addObject:model];
+			}
+		}
 		}
 		
 		completion(urlArray);

@@ -24,7 +24,6 @@
 	self.success = success;
 	self.failure = failure;
 	
-	
 	if (![token isEqual: @""])
 	{
 		NSLog(@"ТОКЕН %@", token);
@@ -33,7 +32,6 @@
 	else {
 		self.failure();
 	}
-	
 }
 
 

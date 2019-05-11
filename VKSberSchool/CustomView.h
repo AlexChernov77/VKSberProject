@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VkSberAlbumModel.h"
 
 @interface CustomView : UIView
+
+-(void)configureSelf: (VkSberAlbumModel *) model;
 
 @end

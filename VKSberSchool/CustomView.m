@@ -7,7 +7,20 @@
 //
 
 #import "CustomView.h"
+#import "UIImageView+AsyncDownload.h"
+
+
+@interface CustomView ()
+
+@property (nonatomic, strong)IBOutlet UIImageView *avatarImage;
+
+@end
 
 @implementation CustomView
+
+-(void)configureSelf: (VkSberAlbumModel *) model
+{
+	[self.avatarImage loadImage:model.photoURL];
+}
 
 @end

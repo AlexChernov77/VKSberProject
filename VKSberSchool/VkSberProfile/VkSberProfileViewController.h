@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "VkSberProfilePresenterProtocol.h"
 
 @interface VkSberProfileViewController : UIViewController
 
+@property (nonatomic, strong, nullable) id<VkSberProfilePresenterProtocol> presenterOutput;
+
 @end
 
-NS_ASSUME_NONNULL_END

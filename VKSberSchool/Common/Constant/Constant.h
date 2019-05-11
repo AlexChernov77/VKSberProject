@@ -17,6 +17,7 @@ extern NSString *const VkSberAuthURL; /**< url авторизации */
 #pragma mark - Methods
 
 extern NSString *const VkSberUserGet; /**< user.get */
+extern NSString *const VkSberPhotosGet; /**< get.all */
 
 
 #pragma mark - Arguments

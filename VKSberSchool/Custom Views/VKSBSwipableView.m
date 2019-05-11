@@ -20,6 +20,7 @@
 @property (strong, nonatomic) UIView *swipeView;
 @property (nonatomic, strong) NSMutableArray *views;
 
+
 -(void)setup;
 -(void)renderViews: (NSInteger) number index: (NSInteger) startIndex;
 
@@ -27,9 +28,9 @@
 
 @implementation VKSBSwipableView
 
-- (void)registerNib:(NSMutableArray *)views
+- (void)registerNib:(UINib *)nib
 {
-	self.views = views;
+	self.nib = nib;
 }
 
 - (void)setDataSource:(id<SwipableViewsDataSource>)dataSource
@@ -65,7 +66,7 @@
 		return;
 	}
 	NSInteger dataDiff = [self.dataSource numbersOfViews] - self.modelsCount;
-	BOOL viewsDiff = dataDiff > 3 - [self.subviews count] ? 3 - [self.subviews count]  : dataDiff;
+	NSInteger viewsDiff = dataDiff > 3 - [self.subviews count] ? 3 - [self.subviews count]  : dataDiff;
 	
 	self.modelsCount = [self.dataSource numbersOfViews];
 	[self renderViews:viewsDiff index:self.visibleIndex + 1];
@@ -80,7 +81,7 @@
 	
 	for (int i = 0; i < number; i++)
 	{
-		UIView* rawView = self.views[i];
+		UIView* rawView = [self.nib instantiateWithOwner:nil options:nil][0];
 		
 		[self.dataSource view:rawView atIndex:indexCounter];
 		rawView.frame = self.bounds;
@@ -128,7 +129,7 @@
 	
 	if (rec.state == UIGestureRecognizerStateEnded)
 	{
-		if (fabs(centerDiff) >= view.frame.size.width / 2 && centerDiff > 0)
+		if (fabs(centerDiff) >= view.frame.size.width / 3 && centerDiff > 0)
 		{
 			//доводчик в лево
 			[UIView animateWithDuration:0.1 animations:^{
@@ -136,7 +137,7 @@
 			} completion:^(BOOL finished) {
 				[self handleAction: right andView:view];
 			}];
-		} else if (fabs(centerDiff) >= view.frame.size.width / 2 && centerDiff < 0)
+		} else if (fabs(centerDiff) >= view.frame.size.width / 3 && centerDiff < 0)
 		{
 			[UIView animateWithDuration:0.1 animations:^{
 				view.center = CGPointMake(view.center.x - 500, view.center.y);

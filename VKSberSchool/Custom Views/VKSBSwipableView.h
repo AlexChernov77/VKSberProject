@@ -17,7 +17,7 @@
 @property(weak, nonatomic) id<SwipableViewsDelegate> delegate;
 
 
-- (void)registerNib:(NSMutableArray *)views;
+- (void)registerNib:(UINib *)nib;
 -(void)handleAction : (SwipeDirection ) direction andView: (UIView *)view;
 -(void)reloadData;
 

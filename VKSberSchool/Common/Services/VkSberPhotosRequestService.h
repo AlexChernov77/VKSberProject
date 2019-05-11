@@ -1,23 +1,23 @@
 //
-//  VkSberUserInfoService.h
+//  VkSberPhotosRequestService.h
 //  VKSberSchool
 //
-//  Created by Александр on 09/05/2019.
+//  Created by Александр on 10/05/2019.
 //  Copyright © 2019 Александр. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
+@interface VkSberPhotosRequestService : NSObject
 
-@interface VkSberUserInfoService : NSObject
-
--(void)getMyProfileInfo: (void (^) (NSDictionary *data)) success
+-(void)getMyAlbum: (void (^) (NSDictionary *data)) success
 		  failureBlock : (void (^) (NSInteger code)) failure;
 
--(void)getUserInfo: (NSString *) userID
+-(void)getFriendsPhoto: (NSString *) userID
 	 successBlock : (void (^) (NSDictionary *data)) success
 	 failureBlock : (void (^) (NSInteger code)) failure;
 
--(void)getUsers: (void (^) (NSArray *urlArray)) completion;
 
+-(void)getPhotos: (void (^) (NSArray *urlArray)) completion;
 @end
+

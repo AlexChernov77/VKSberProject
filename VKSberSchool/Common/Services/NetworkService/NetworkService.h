@@ -6,7 +6,7 @@
 //  Copyright © 2019 Александр. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NetworkService : NSObject
 
