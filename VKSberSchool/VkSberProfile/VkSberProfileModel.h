@@ -11,7 +11,7 @@
 @interface VkSberProfileModel : NSObject
 
 @property (strong, nonatomic) NSString *userName;
-@property (strong, nonatomic) NSURL *photoURL;
+@property (strong, nonatomic) NSString *photoURL;
 @property (strong, nonatomic) NSString *education;
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *bDay;
@@ -20,7 +20,7 @@
 					   birthday: (NSString *)bday
 						   city: (NSString *)city
 					 educations: (NSString *) education
-							url: (NSURL *)photoUrl;
+							url: (NSString *)photoUrl;
 
 
 @end

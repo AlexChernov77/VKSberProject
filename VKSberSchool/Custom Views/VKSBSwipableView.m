@@ -69,7 +69,7 @@
 	NSInteger viewsDiff = dataDiff > 3 - [self.subviews count] ? 3 - [self.subviews count]  : dataDiff;
 	
 	self.modelsCount = [self.dataSource numbersOfViews];
-	[self renderViews:viewsDiff index:self.visibleIndex + 1];
+	[self renderViews:viewsDiff index:self.visibleIndex];
 }
 
 

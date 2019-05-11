@@ -14,7 +14,7 @@
 					   birthday: (NSString *)bday
 						   city: (NSString *)city
 					 educations: (NSString *) education
-							url: (NSURL *)photoUrl
+							url: (NSString *)photoUrl
 
 {
 	if (self = [super init])

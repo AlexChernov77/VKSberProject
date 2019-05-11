@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
 	self.exampleView = [VKSBSwipableView new];
 	self.exampleView.frame = self.view.frame;
 	[self.view addSubview:self.exampleView];
@@ -62,7 +63,7 @@
 
 - (void)view:(UIView *)view atIndex:(NSInteger)index
 {
-	VkSberAlbumModel *model = self.array[index - 1];
+	VkSberAlbumModel *model = self.array[index];
 	[(CustomView*)view configureSelf: model];
 }
 @end

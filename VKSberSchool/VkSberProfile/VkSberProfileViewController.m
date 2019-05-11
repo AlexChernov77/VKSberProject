@@ -177,7 +177,7 @@
 	self.cityLabel.text = user.city;
 	self.bdayLabel.text = user.bDay;
 	self.graduateLabel.text = user.education;
-//	[self.avatarImage loadImage:user.photoURL];
+	[self.avatarImage loadImage:user.photoURL];
 }
 
 @end

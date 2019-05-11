@@ -74,14 +74,13 @@
 		{
 			NSString *name = imageJSON[@"first_name"];
 			NSString *url_m = imageJSON[@"photo_max"];
-			NSString *education = imageJSON[@"university_name"];
-			NSString *bday = imageJSON[@"bdate"];
+			NSString *education = imageJSON[@"university_name"] == nil ? @"Не указан" : imageJSON[@"university_name"];;
+			NSString *bday = imageJSON[@"bdate"] == nil ? @"Не указан" : imageJSON[@"bdate"];
 			NSString *lastName = imageJSON[@"last_name"];
-			NSString *city = imageJSON[@"city"];
+			NSString *city = imageJSON[@"city"] == nil ? @"Не указан" : imageJSON[@"city"];;
 			NSString *userName = [NSString stringWithFormat: @"%@ %@", name, lastName];
 			
-			NSURL *url = [[NSURL alloc] initWithString:url_m];
-			VkSberProfileModel *model = [[VkSberProfileModel alloc] initWithUserName:userName birthday:bday city:city educations:education url:url];
+			VkSberProfileModel *model = [[VkSberProfileModel alloc] initWithUserName:userName birthday:bday city:city educations:education url:url_m];
 			[urlArray addObject:model];
 		}
 		
