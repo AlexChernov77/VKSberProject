@@ -18,18 +18,20 @@
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 @property (strong, nonatomic) NetworkService *nerworkService;
 @property (strong, nonatomic) NetworkHelper *nerworkHepler;
+@property (strong, nonnull) NSString *userID;
 
 @end
 
 @implementation VkSberUserInfoService
 
--(instancetype) init
+-(instancetype) initWithUserID: (NSString *) userID
 {
 	if (self = [super init])
 	{
 		_userDefaultsService = [NSUserDefaultsService new];
 		_nerworkService = [NetworkService new];
 		_nerworkHepler = [NetworkHelper new];
+		_userID = userID;
 	}
 	return self;
 }
@@ -39,23 +41,10 @@
 {
 	
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
-	
-	[dictionary setObject:@"bdate,education,photo_max,city" forKey:VkSberFields];
-	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
-	
-	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberUserGet withParametrs:dictionary];
-	
-	[self.nerworkService load:request successBlock:success failureBlock:failure];
-}
-
--(void)getUserInfo: (NSString *) userID
-	 successBlock : (void (^) (NSDictionary *data)) success
-	 failureBlock : (void (^) (NSInteger code)) failure
-{
-	
-	NSMutableDictionary *dictionary = [NSMutableDictionary new];
-	
-	[dictionary setObject: userID forKey:VkSberUserId];
+	if (![self.userID  isEqual: @""])
+	{
+		[dictionary setObject: self.userID forKey:VkSberUserId];
+	}
 	[dictionary setObject:@"bdate,education,photo_max,city" forKey:VkSberFields];
 	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
 	

@@ -39,7 +39,7 @@
 	
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	
-	[dictionary setObject: @(10) forKey:VkSberCount];
+	[dictionary setObject: @(20) forKey:VkSberCount];
 	[dictionary setObject: @(0) forKey:VkSberPhotoSizes];
 	[dictionary setObject: @(0) forKey:VkSberOffset];
 	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];

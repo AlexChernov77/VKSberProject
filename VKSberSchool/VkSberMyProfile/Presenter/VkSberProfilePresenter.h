@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VkSberProfilePresenter : NSObject<VkSberProfilePresenterProtocol>
 
+-(instancetype)initWithUserId: (NSString *)userID;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -59,7 +59,7 @@
 		VkSberProfileViewController *profileCiewController = [[VkSberProfileViewController alloc] init];
 		UINavigationController *navigationProfileController = [[UINavigationController alloc] initWithRootViewController:profileCiewController];
 		
-		VkSberProfilePresenter *presenter = [VkSberProfilePresenter new];
+		VkSberProfilePresenter *presenter = [[VkSberProfilePresenter alloc] initWithUserId:@""];
 		profileCiewController.presenterOutput = presenter;
 		
 		VkSberFriendsViewController *friendsviewController = [[VkSberFriendsViewController alloc] init];

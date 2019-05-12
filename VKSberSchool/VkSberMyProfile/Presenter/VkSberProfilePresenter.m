@@ -14,16 +14,17 @@
 
 @property (nonatomic, strong) VkSberUserInfoService *service;
 @property (nonatomic, strong) VkSberProfileModel *model;
+@property (strong, nonnull) NSString *userID;
 
 @end
 
 @implementation VkSberProfilePresenter
 
--(instancetype)init
+-(instancetype)initWithUserId: (NSString *)userID
 {
 	if (self = [super init])
 	{
-		self.service = [VkSberUserInfoService new];
+		self.service = [[VkSberUserInfoService alloc] initWithUserID:userID];
 	}
 	return self;
 }

@@ -11,13 +11,7 @@
 
 @interface VkSberUserInfoService : NSObject
 
--(void)getMyProfileInfo: (void (^) (NSDictionary *data)) success
-		  failureBlock : (void (^) (NSInteger code)) failure;
-
--(void)getUserInfo: (NSString *) userID
-	 successBlock : (void (^) (NSDictionary *data)) success
-	 failureBlock : (void (^) (NSInteger code)) failure;
-
 -(void)getUsers: (void (^) (NSArray *urlArray)) completion;
+-(instancetype) initWithUserID: (NSString *) userID;
 
 @end
