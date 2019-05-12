@@ -10,15 +10,14 @@
 #import "VKSBSwipableView.h"
 #import "CustomView.h"
 #import "VkSberAlbumModel.h"
-#import "UIImageView+AsyncDownload.h"
+
 
 @interface VkSberPhotoAlbumViewController ()<SwipableViewsDataSource, SwipableViewsDelegate>
 
-@property (nonatomic, strong) UIImageView *avatarImage;
-@property (strong, nonatomic)  VKSBSwipableView *exampleView;
-@property (strong, nonatomic) CustomView *customView;
+@property (strong, nonatomic)  VKSBSwipableView *swipeView;
 
 @end
+
 
 @implementation VkSberPhotoAlbumViewController
 
@@ -32,15 +31,19 @@
 -(void)setupUI
 {
 	self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
-	self.exampleView = [VKSBSwipableView new];
-	self.exampleView.frame = self.view.frame;
+	self.swipeView = [VKSBSwipableView new];
+	self.swipeView.frame = self.view.frame;
 	
-	[self.view addSubview:self.exampleView];
+	[self.view addSubview:self.swipeView];
 	UINib *nib = [UINib nibWithNibName:@"CustomView" bundle:nil];
-	[self.exampleView registerNib:nib];
-	self.exampleView.dataSource = self;
-	self.exampleView.delegate = self;
+	[self.swipeView registerNib:nib];
+	self.swipeView.dataSource = self;
+	self.swipeView.delegate = self;
 }
+
+
+#pragma mark - SwipableViewsDataSource, SwipableViewsDelegate
+
 
 - (void)willSwiped:(SwipeDirection )direction atIndex:(NSInteger)index
 {
@@ -57,9 +60,14 @@
 	VkSberAlbumModel *model = [self.presenterOutput entityAt:index];
 	[(CustomView*)view configureSelf: model];
 }
+
+
+#pragma mark - VkSberPhotoAlbumPresenterInputProtocol
+
+
 - (void)reloadData
 {
-	[self.exampleView reloadData];
+	[self.swipeView reloadData];
 }
 
 @end
