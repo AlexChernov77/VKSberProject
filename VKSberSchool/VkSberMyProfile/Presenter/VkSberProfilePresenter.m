@@ -7,13 +7,16 @@
 //
 
 #import "VkSberProfilePresenter.h"
+#import "VkSberPhotoAlbumViewController.h"
 #import "VkSberUserInfoService.h"
 #import "VkSberProfileModel.h"
+#import "VkSberPhotoAlbumAssembly.h"
 
 @interface VkSberProfilePresenter()
 
 @property (nonatomic, strong) VkSberUserInfoService *service;
 @property (nonatomic, strong) VkSberProfileModel *model;
+@property (nonatomic, strong) VkSberPhotoAlbumAssembly *photoAssembly;
 @property (strong, nonnull) NSString *userID;
 
 @end
@@ -26,6 +29,7 @@
 	{
 		self.userID = userID;
 		self.service = [[VkSberUserInfoService alloc] initWithUserID:userID];
+		self.photoAssembly = [VkSberPhotoAlbumAssembly new];
 	}
 	return self;
 }
@@ -44,6 +48,12 @@
 {
 	return self.userID;
 }
+
+- (VkSberPhotoAlbumViewController *)perfomToPhoto
+{
+	return [self.photoAssembly buildPhoto:self.userID];
+}
+
 
 
 @end

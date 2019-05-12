@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VkSberPhotoAlbumViewController.h"
 #import "VkSberProfileModel.h"
 
 @protocol VkSberProfilePresenterProtocol <NSObject>
 
 - (void)loadUser:(void (^) (VkSberProfileModel *user)) user;
 - (NSString *)getUserID;
+- (VkSberPhotoAlbumViewController *)perfomToPhoto;
 
 @end
 

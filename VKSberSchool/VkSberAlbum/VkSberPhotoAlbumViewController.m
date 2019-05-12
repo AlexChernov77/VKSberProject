@@ -7,8 +7,6 @@
 //
 
 #import "VkSberPhotoAlbumViewController.h"
-#import "VkSberPhotosRequestService.h"
-#import "VkSberUserInfoService.h"
 #import "VKSBSwipableView.h"
 #import "CustomView.h"
 #import "VkSberAlbumModel.h"
@@ -17,12 +15,8 @@
 @interface VkSberPhotoAlbumViewController ()<SwipableViewsDataSource, SwipableViewsDelegate>
 
 @property (nonatomic, strong) UIImageView *avatarImage;
-@property (nonatomic,strong) VkSberPhotosRequestService *service;
 @property (strong, nonatomic)  VKSBSwipableView *exampleView;
 @property (strong, nonatomic) CustomView *customView;
-@property (nonatomic, strong) NSMutableArray *views;
-@property (nonatomic,copy) NSArray *array;
-
 
 @end
 
@@ -31,25 +25,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self setupUI];
+	[self.presenterOutput loadPhotos];
+}
+
+-(void)setupUI
+{
 	self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
 	self.exampleView = [VKSBSwipableView new];
 	self.exampleView.frame = self.view.frame;
+	
 	[self.view addSubview:self.exampleView];
-	self.views = [NSMutableArray new];
-	for(int i = 0; i < 3; i++)
-	{
-		self.customView = [CustomView new];
-		[self.views addObject:self.customView];
-	}
 	UINib *nib = [UINib nibWithNibName:@"CustomView" bundle:nil];
 	[self.exampleView registerNib:nib];
 	self.exampleView.dataSource = self;
 	self.exampleView.delegate = self;
-	self.service = [[VkSberPhotosRequestService alloc] initWithUserID:self.userID];
-	[self.service getPhotos:^(NSArray *urlArray) {
-		self.array = urlArray;
-		[self.exampleView reloadData];
-	}];
 }
 
 - (void)willSwiped:(SwipeDirection )direction atIndex:(NSInteger)index
@@ -59,12 +49,17 @@
 
 - (NSInteger)numbersOfViews
 {
-	return self.array.count;
+	return [self.presenterOutput numberOfEntities];
 }
 
 - (void)view:(UIView *)view atIndex:(NSInteger)index
 {
-	VkSberAlbumModel *model = self.array[index];
+	VkSberAlbumModel *model = [self.presenterOutput entityAt:index];
 	[(CustomView*)view configureSelf: model];
 }
+- (void)reloadData
+{
+	[self.exampleView reloadData];
+}
+
 @end

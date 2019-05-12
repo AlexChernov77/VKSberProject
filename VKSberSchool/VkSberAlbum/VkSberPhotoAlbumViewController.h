@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VkSberPhotoAlbumPresenterProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VkSberPhotoAlbumViewController : UIViewController
+@interface VkSberPhotoAlbumViewController : UIViewController<VkSberPhotoAlbumPresenterInputProtocol>
 
-@property (nonatomic, strong) NSString *userID;
+@property (nonatomic, strong, nullable) id<VkSberPhotoAlbumPresenterOutPutProtocol> presenterOutput;
 
 @end
 
