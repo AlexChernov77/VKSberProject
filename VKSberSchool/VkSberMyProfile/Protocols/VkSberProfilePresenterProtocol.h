@@ -12,6 +12,7 @@
 @protocol VkSberProfilePresenterProtocol <NSObject>
 
 - (void)loadUser:(void (^) (VkSberProfileModel *user)) user;
+- (NSString *)getUserID;
 
 @end
 

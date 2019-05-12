@@ -7,6 +7,8 @@
 //
 
 #import "VkSberFriendsViewController.h"
+#import "VkSberProfileViewController.h"
+#import "VkSberProfilePresenter.h"
 #import "VkSberFriendsRequestService.h"
 #import "VkSberFriendsTableViewCell.h"
 #import "VkSberFriendsAssembly.h"
@@ -58,7 +60,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	
+	VkSberProfileViewController *viewController = [VkSberProfileViewController new];
+	VkSberFriendsModel *userId =  [self.presenterOutput entityAt:indexPath.row];
+	VkSberProfilePresenter *presenter = [[VkSberProfilePresenter alloc] initWithUserId:userId.userID];
+	viewController.presenterOutput = presenter;
+	[self.navigationController pushViewController:viewController animated:NO];
 }
 
 #pragma mark - VkSberFriendsViewLoadedProtocol

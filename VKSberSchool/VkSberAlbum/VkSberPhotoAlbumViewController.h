@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VkSberPhotoAlbumViewController : UIViewController
 
+@property (nonatomic, strong) NSString *userID;
+
 @end
 
 NS_ASSUME_NONNULL_END

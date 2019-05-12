@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSMutableArray *views;
 @property (nonatomic,copy) NSArray *array;
 
+
 @end
 
 @implementation VkSberPhotoAlbumViewController
@@ -44,7 +45,7 @@
 	[self.exampleView registerNib:nib];
 	self.exampleView.dataSource = self;
 	self.exampleView.delegate = self;
-	self.service = [VkSberPhotosRequestService new];
+	self.service = [[VkSberPhotosRequestService alloc] initWithUserID:self.userID];
 	[self.service getPhotos:^(NSArray *urlArray) {
 		self.array = urlArray;
 		[self.exampleView reloadData];

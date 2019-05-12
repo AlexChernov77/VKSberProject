@@ -17,18 +17,20 @@
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 @property (strong, nonatomic) NetworkService *nerworkService;
 @property (strong, nonatomic) NetworkHelper *nerworkHepler;
+@property (strong, nonnull) NSString *userID;
 
 @end
 
 @implementation VkSberPhotosRequestService
 
--(instancetype) init
+-(instancetype) initWithUserID: (NSString *) userID
 {
 	if (self = [super init])
 	{
 		_userDefaultsService = [NSUserDefaultsService new];
 		_nerworkService = [NetworkService new];
 		_nerworkHepler = [NetworkHelper new];
+		_userID = userID;
 	}
 	return self;
 }
@@ -39,30 +41,17 @@
 	
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	
+	if (![self.userID  isEqual: @""])
+	{
+		[dictionary setObject: self.userID forKey:VkSberOwnerId];
+	}
+	
 	[dictionary setObject: @(20) forKey:VkSberCount];
 	[dictionary setObject: @(0) forKey:VkSberPhotoSizes];
 	[dictionary setObject: @(0) forKey:VkSberOffset];
 	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
 	
 	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberPhotosGet withParametrs:dictionary];
-	
-	[self.nerworkService load:request successBlock:success failureBlock:failure];
-}
-
--(void)getFriendsPhoto: (NSString *) userID
-	 successBlock : (void (^) (NSDictionary *data)) success
-	 failureBlock : (void (^) (NSInteger code)) failure
-{
-	
-	NSMutableDictionary *dictionary = [NSMutableDictionary new];
-	
-	[dictionary setObject: userID forKey:VkSberUserId];
-	[dictionary setObject: @(1) forKey:VkSberCount];
-	[dictionary setObject: @(0) forKey:VkSberPhotoSizes];
-	[dictionary setObject: @(0) forKey:VkSberOffset];
-	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
-	
-	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberUserGet withParametrs:dictionary];
 	
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }

@@ -10,13 +10,7 @@
 
 @interface VkSberPhotosRequestService : NSObject
 
--(void)getMyAlbum: (void (^) (NSDictionary *data)) success
-		  failureBlock : (void (^) (NSInteger code)) failure;
-
--(void)getFriendsPhoto: (NSString *) userID
-	 successBlock : (void (^) (NSDictionary *data)) success
-	 failureBlock : (void (^) (NSInteger code)) failure;
-
+-(instancetype) initWithUserID: (NSString *) userID;
 
 -(void)getPhotos: (void (^) (NSArray *urlArray)) completion;
 @end

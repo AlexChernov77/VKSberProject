@@ -24,10 +24,13 @@
 {
 	if (self = [super init])
 	{
+		self.userID = userID;
 		self.service = [[VkSberUserInfoService alloc] initWithUserID:userID];
 	}
 	return self;
 }
+
+
 
 - (void)loadUser:(void (^)(VkSberProfileModel *))user
 {
@@ -36,5 +39,11 @@
 		user(self.model);
 	}];
 }
+
+- (NSString *)getUserID
+{
+	return self.userID;
+}
+
 
 @end

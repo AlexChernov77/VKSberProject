@@ -56,6 +56,7 @@
 -(void)perfomToAlbum
 {
 	VkSberPhotoAlbumViewController *viewController = [VkSberPhotoAlbumViewController new];
+	viewController.userID = [self.presenterOutput getUserID];
 	[self.navigationController pushViewController:viewController animated:NO];
 }
 

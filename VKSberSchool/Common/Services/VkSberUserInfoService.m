@@ -66,7 +66,8 @@
 			NSString *education = imageJSON[@"university_name"] == nil ? @"Не указан" : imageJSON[@"university_name"];;
 			NSString *bday = imageJSON[@"bdate"] == nil ? @"Не указан" : imageJSON[@"bdate"];
 			NSString *lastName = imageJSON[@"last_name"];
-			NSString *city = imageJSON[@"city"] == nil ? @"Не указан" : imageJSON[@"city"];;
+			NSDictionary *cityDictionary = imageJSON[@"city"];
+			NSString *city = cityDictionary[@"title"]  == nil ? @"Не указан" : cityDictionary[@"title"];
 			NSString *userName = [NSString stringWithFormat: @"%@ %@", name, lastName];
 			
 			VkSberProfileModel *model = [[VkSberProfileModel alloc] initWithUserName:userName birthday:bday city:city educations:education url:url_m];
