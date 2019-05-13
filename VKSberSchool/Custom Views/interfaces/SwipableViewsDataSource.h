@@ -8,8 +8,8 @@
 
 @protocol SwipableViewsDataSource <NSObject>
 
--(void) view: (UIView* ) view atIndex: (NSInteger) index;
--(NSInteger)numbersOfViews;
+- (void) view: (UIView* ) view atIndex: (NSInteger) index;
+- (NSInteger)numbersOfViews;
 
 @end
 

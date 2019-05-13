@@ -12,7 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSUserDefaultsService : NSObject
 
+/**
+сохранения токена полученного пр иавторизации
+ */
+
 - (void)saveAccessToken: (NSString *) searchString;
+
+/**
+ Инициализирует акшен
+ @return string
+ */
 - (NSString *)getAccessToken;
 
 @end

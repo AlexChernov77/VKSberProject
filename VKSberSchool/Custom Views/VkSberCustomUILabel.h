@@ -11,7 +11,15 @@
 
 @interface VkSberCustomUILabel : UILabel
 
--(instancetype)init: (CGRect) frame textColor: (UIColor *) color
+/**
+ Инициализирует лейб
+ @param color - цвет
+ @param textFont - font
+ @param text - текст
+ @return action
+*/
+
+- (instancetype)init: (CGRect) frame textColor: (UIColor *) color
 						font: (UIFont *) textFont
 				   textLabel: (NSString *) text;
 

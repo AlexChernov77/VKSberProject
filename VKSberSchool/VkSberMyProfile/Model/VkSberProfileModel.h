@@ -16,10 +16,20 @@
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *bDay;
 
+/**
+ Инициализирует модель
+ @param name - имя
+ @param bday - др
+ @param city - город
+ @param education - образование
+ @param photoUrl - ссылка на аватарку
+ @return action
+ */
+
 -(instancetype)initWithUserName: (NSString *)name
 					   birthday: (NSString *)bday
 						   city: (NSString *)city
-					 educations: (NSString *) education
+					 educations: (NSString *)education
 							url: (NSString *)photoUrl;
 
 

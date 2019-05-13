@@ -10,6 +10,10 @@
 
 @interface UIImageView (AsyncDownload)
 
+/**
+ асинхронная загрузка картинки
+*/
+
 - (void)loadImage: (NSString *) urlString;
 
 @end

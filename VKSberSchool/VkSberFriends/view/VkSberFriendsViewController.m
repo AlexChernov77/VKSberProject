@@ -13,11 +13,13 @@
 #import "VkSberFriendsTableViewCell.h"
 #import "VkSberFriendsAssembly.h"
 #import "VkSberFriendsModel.h"
+#import "VkSberEmptyLoadingView.h"
 
 @interface VkSberFriendsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) VkSberFriendsRequestService *service;
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic, strong) VkSberEmptyLoadingView *loadingView;
 
 @end
 
@@ -27,6 +29,7 @@
 {
     [super viewDidLoad];
 	[self setupUI];
+	[self setupLoadingView];
 	[VkSberFriendsAssembly assignView:self];
 }
 
@@ -40,6 +43,15 @@
 	[self.view addSubview:self.tableView];
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
+}
+
+-(void)setupLoadingView
+{
+	self.loadingView = [[VkSberEmptyLoadingView alloc] initWithFrame:self.view.frame];
+	
+	[self.view addSubview:self.loadingView];
+	[self.view bringSubviewToFront:self.loadingView];
+	self.loadingView.hidden = YES;
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -79,8 +91,9 @@
 {
 	self.presenterOutput = presenterOutput;
 	self.presenterInput = presenterInput;
-	
+	self.loadingView.hidden = NO;
 	[self.presenterInput viewLoaded:self];
+	self.loadingView.hidden = YES;
 }
 
 @end

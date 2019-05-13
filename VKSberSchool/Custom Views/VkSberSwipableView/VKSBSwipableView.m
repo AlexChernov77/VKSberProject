@@ -11,18 +11,13 @@
 
 @interface VKSBSwipableView()
 
-@property (nonatomic) UINib* nib;
-@property (copy, nonatomic) NSArray* visibleView;
+@property (nonatomic) UINib *nib;
+@property (copy, nonatomic) NSArray *visibleView;
 @property (assign, nonatomic) NSInteger visibleIndex;
 @property (assign, nonatomic) NSInteger modelsCount;
 @property (assign, nonatomic) NSInteger visivleReuseViewIndex;
-@property NSOperationQueue* operationQueue;
 @property (strong, nonatomic) UIView *swipeView;
 @property (nonatomic, strong) NSMutableArray *views;
-
-
--(void)setup;
--(void)renderViews: (NSInteger) number index: (NSInteger) startIndex;
 
 @end
 
@@ -39,7 +34,7 @@
 	[self setup];
 }
 
--(void)setup
+- (void)setup
 {
 	self.clipsToBounds = NO;
 	self.visibleIndex = 0;
@@ -48,7 +43,7 @@
 	[self drawViews];
 }
 
--(void)drawViews
+- (void)drawViews
 {
 	self.modelsCount = self.dataSource.numbersOfViews;
 	if (self.dataSource.numbersOfViews == 0)
@@ -60,7 +55,7 @@
 	
 }
 
--(void)reloadData
+- (void)reloadData
 {
 	if (self.modelsCount >= [self.dataSource numbersOfViews]) {
 		return;
@@ -74,14 +69,14 @@
 
 
 
--(void)renderViews:(NSInteger)number index:(NSInteger)startIndex
+- (void)renderViews:(NSInteger)number index:(NSInteger)startIndex
 {
-	NSMutableArray* viewsArray = [NSMutableArray new];
+	NSMutableArray *viewsArray = [NSMutableArray new];
 	NSInteger indexCounter = startIndex;
 	
 	for (int i = 0; i < number; i++)
 	{
-		UIView* rawView = [self.nib instantiateWithOwner:nil options:nil][0];
+		UIView *rawView = [self.nib instantiateWithOwner:nil options:nil][0];
 		
 		[self.dataSource view:rawView atIndex:indexCounter];
 		rawView.frame = self.bounds;
@@ -96,7 +91,7 @@
 }
 
 
--(void)addRecognizers
+- (void)addRecognizers
 {
 	for (int i = 0; i < self.visibleView.count; i++)
 	{
@@ -105,7 +100,7 @@
 	}
 }
 
--(void)addPanGestureRecognizer : (UIView *)view
+- (void)addPanGestureRecognizer : (UIView *)view
 {
 	UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
 	
@@ -113,13 +108,12 @@
 }
 
 
--(void)move : (UIPanGestureRecognizer *)rec
+- (void)move : (UIPanGestureRecognizer *)rec
 {
 	UIView *view = rec.view;
 	CGPoint translation = [rec translationInView:self];
 	CGFloat centerDiff = view.center.x - (self.bounds.size.width / 2.0);
 	
-	// center movement
 	CGPoint newCenter = CGPointMake(self.bounds.size.width / 2.0 + translation.x, self.bounds.size.height / 2 + translation.y);
 	view.center = newCenter;
 	
@@ -155,7 +149,7 @@
 	}
 }
 
--(void)handleAction : (SwipeDirection) direction andView: (UIView *)view
+- (void)handleAction : (SwipeDirection) direction andView: (UIView *)view
 {
 	[self.delegate willSwiped:direction atIndex:self.visibleIndex];
 	[view removeFromSuperview];
@@ -176,16 +170,6 @@
 	view.frame = self.bounds;
 	[self insertSubview:view atIndex:0];
 	self.visibleIndex += 1;
-}
-
--(void)autoSwipe : (SwipeDirection) direction
-{
-	self.operationQueue.maxConcurrentOperationCount = 1;
-	
-	if (self.operationQueue.operations.count > 1)
-	{
-		[self.operationQueue cancelAllOperations];
-	}
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation VkSberCustomUILabel
 
--(instancetype)init: (CGRect) frame textColor: (UIColor *) color
+- (instancetype)init: (CGRect) frame textColor: (UIColor *) color
 													font: (UIFont *) textFont
 											   textLabel: (NSString *) text
 {

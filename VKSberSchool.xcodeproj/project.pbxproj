@@ -21,7 +21,6 @@
 		7EBE7C9E22863F7A00E3B421 /* UIImageView+AsyncDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C9D22863F7A00E3B421 /* UIImageView+AsyncDownload.m */; };
 		7EBE7CA322871FE200E3B421 /* VkSberPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */; };
 		7EBE7CA6228721BB00E3B421 /* VkSberAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7CA5228721BB00E3B421 /* VkSberAlbumModel.m */; };
-		7EE219AF227A594A00BCDDAB /* AutomaticSwipeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE219AE227A594900BCDDAB /* AutomaticSwipeOperation.m */; };
 		7EE219B2227A68E000BCDDAB /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE219B1227A68E000BCDDAB /* CustomView.m */; };
 		7EE379282287718B00D9A7EA /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE379272287718B00D9A7EA /* CustomView.xib */; };
 		7EE3792B22885EA300D9A7EA /* VkSberFriendsRequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3792A22885EA300D9A7EA /* VkSberFriendsRequestService.m */; };
@@ -32,6 +31,8 @@
 		7EE379482288C02700D9A7EA /* VkSberPhotoAlbumAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379472288C02700D9A7EA /* VkSberPhotoAlbumAssembly.m */; };
 		7EE3794B2288C22D00D9A7EA /* VkSberPhotoAlbumPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3794A2288C22D00D9A7EA /* VkSberPhotoAlbumPresenter.m */; };
 		7EE37954228952C300D9A7EA /* VkSberProfileAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE37953228952C300D9A7EA /* VkSberProfileAssembly.m */; };
+		7EE379982289A0F700D9A7EA /* Friends+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379962289A0F700D9A7EA /* Friends+CoreDataClass.m */; };
+		7EE379992289A0F700D9A7EA /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */; };
 		7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */; };
 		7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */; };
 		7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D622843B5D004E3535 /* VkAuthService.m */; };
@@ -86,8 +87,6 @@
 		7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberPhotoAlbumViewController.m; sourceTree = "<group>"; };
 		7EBE7CA4228721BB00E3B421 /* VkSberAlbumModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberAlbumModel.h; sourceTree = "<group>"; };
 		7EBE7CA5228721BB00E3B421 /* VkSberAlbumModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberAlbumModel.m; sourceTree = "<group>"; };
-		7EE219AD227A594900BCDDAB /* AutomaticSwipeOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomaticSwipeOperation.h; sourceTree = "<group>"; };
-		7EE219AE227A594900BCDDAB /* AutomaticSwipeOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomaticSwipeOperation.m; sourceTree = "<group>"; };
 		7EE219B0227A68E000BCDDAB /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		7EE219B1227A68E000BCDDAB /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		7EE379272287718B00D9A7EA /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -110,6 +109,10 @@
 		7EE3794C2288C38300D9A7EA /* VkSberPhotoAlbumPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberPhotoAlbumPresenterProtocol.h; sourceTree = "<group>"; };
 		7EE37952228952C300D9A7EA /* VkSberProfileAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfileAssembly.h; sourceTree = "<group>"; };
 		7EE37953228952C300D9A7EA /* VkSberProfileAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberProfileAssembly.m; sourceTree = "<group>"; };
+		7EE379942289A0F700D9A7EA /* Friends+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataProperties.h"; sourceTree = "<group>"; };
+		7EE379952289A0F700D9A7EA /* Friends+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataClass.h"; sourceTree = "<group>"; };
+		7EE379962289A0F700D9A7EA /* Friends+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataClass.m"; sourceTree = "<group>"; };
+		7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsViewController.h; sourceTree = "<group>"; };
 		7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsViewController.m; sourceTree = "<group>"; };
 		7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfileViewController.h; sourceTree = "<group>"; };
@@ -262,6 +265,10 @@
 		7EE3793D2288AEDC00D9A7EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7EE379942289A0F700D9A7EA /* Friends+CoreDataProperties.h */,
+				7EE379952289A0F700D9A7EA /* Friends+CoreDataClass.h */,
+				7EE379962289A0F700D9A7EA /* Friends+CoreDataClass.m */,
+				7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */,
 				7EE3792C2288753100D9A7EA /* VkSberFriendsModel.h */,
 				7EE3792D2288753100D9A7EA /* VkSberFriendsModel.m */,
 			);
@@ -317,8 +324,6 @@
 			children = (
 				1F17642A22403E330085818C /* VKSBSwipableView.h */,
 				1F17642B22403E330085818C /* VKSBSwipableView.m */,
-				7EE219AD227A594900BCDDAB /* AutomaticSwipeOperation.h */,
-				7EE219AE227A594900BCDDAB /* AutomaticSwipeOperation.m */,
 			);
 			path = VkSberSwipableView;
 			sourceTree = "<group>";
@@ -565,11 +570,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE3794B2288C22D00D9A7EA /* VkSberPhotoAlbumPresenter.m in Sources */,
+				7EE379982289A0F700D9A7EA /* Friends+CoreDataClass.m in Sources */,
 				7EFB95E122843CBC004E3535 /* VkSberUserInfoService.m in Sources */,
 				7EE379482288C02700D9A7EA /* VkSberPhotoAlbumAssembly.m in Sources */,
-				7EE219AF227A594A00BCDDAB /* AutomaticSwipeOperation.m in Sources */,
 				7EE379312288939300D9A7EA /* VkSberFriendsTableViewCell.m in Sources */,
 				7EE3792B22885EA300D9A7EA /* VkSberFriendsRequestService.m in Sources */,
+				7EE379992289A0F700D9A7EA /* Friends+CoreDataProperties.m in Sources */,
 				7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */,
 				7EBE7CA6228721BB00E3B421 /* VkSberAlbumModel.m in Sources */,
 				7EE379382288A48F00D9A7EA /* VkSberFriendsAssembly.m in Sources */,

@@ -11,6 +11,10 @@
 
 @interface VkSberProfileViewController : UIViewController
 
+/**
+ делегат презентера
+ */
+
 @property (nonatomic, strong, nullable) id<VkSberProfilePresenterProtocol> presenterOutput;
 
 @end

@@ -10,11 +10,15 @@
 #import "VkSberFriendsPresenterProtocol.h"
 #import "VkSberFriendsRequestService.h"
 #import "VkSberFriendsModel.h"
+#import "AppDelegate.h"
+#import "Friends+CoreDataClass.h"
 
 @interface VkSberFriendsPresenter()
 
 @property (nonatomic, copy) NSArray *friendsArray;
 @property (nonatomic,strong) VkSberFriendsRequestService *service;
+@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
+@property (nonatomic, strong) NSFetchRequest *fetchRequest;
 
 @end
 
@@ -55,9 +59,34 @@
 	}];
 }
 
+- (NSArray *)updatedArray;
+{
+	NSError *error = nil;
+	
+	NSArray *result = [self.coreDataContext executeFetchRequest:self.fetchRequest ? : [Friends fetchRequest] error:&error];
+	return result;
+}
+
+- (NSManagedObjectContext *)coreDataContext
+{
+	UIApplication *application = [UIApplication sharedApplication];
+	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
+	persistentContainer;
+	NSManagedObjectContext *context = container.viewContext;
+	
+	return context;
+}
+
+- (NSFetchRequest *)fetchRequest
+{
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Friends"];
+	return fetchRequest;
+}
+
 - (void)viewLoaded:(id<VkSberFriendsViewLoadedProtocol>)view
 {
 	self.view = view;
+	self.friendsArray = [self updatedArray];
 	[self getFriendsList];
 }
 

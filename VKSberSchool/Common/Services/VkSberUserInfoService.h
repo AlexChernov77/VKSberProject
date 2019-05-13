@@ -11,7 +11,19 @@
 
 @interface VkSberUserInfoService : NSObject
 
+/**
+  отпрака запроса на получение пользователей, отрабатывает блок compection при успехе
+ */
+
 -(void)getUsers: (void (^) (NSArray *urlArray)) completion;
+
+
+/**
+ Инициализирует акшен
+ @param userID - айди пользователя
+ @return action
+ */
+
 -(instancetype) initWithUserID: (NSString *) userID;
 
 @end

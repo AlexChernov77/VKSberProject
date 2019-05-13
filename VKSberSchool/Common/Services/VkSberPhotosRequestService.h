@@ -10,8 +10,22 @@
 
 @interface VkSberPhotosRequestService : NSObject
 
+
+/**
+ Инициализирует акшен
+ @param userID - айди пользователя
+ @return action
+ */
+
 -(instancetype) initWithUserID: (NSString *) userID;
 
+
+/**
+ отпрака запроса на получение фотографий, отрабатывает блок compection при успехе
+ */
+
 -(void)getPhotos: (void (^) (NSArray *urlArray)) completion;
+
+
 @end
 

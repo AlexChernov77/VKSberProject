@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VkSberProfileAssembly : NSObject
 
+/**
+ сборка стартового экрана
+ */
+
 -(UITabBarController *)buildProfile : (NSString *)userID;
 
 @end

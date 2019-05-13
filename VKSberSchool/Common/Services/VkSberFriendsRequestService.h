@@ -11,6 +11,10 @@
 
 @interface VkSberFriendsRequestService : NSObject
 
+/**
+ отпрака запроса на получение друзей, отрабатывает блок compection при успехе
+ */
+
 - (void)getFriends: (void (^) (NSArray *urlArray)) completion;
 
 @end

@@ -18,8 +18,8 @@
 
 
 - (void)registerNib:(UINib *)nib;
--(void)handleAction : (SwipeDirection ) direction andView: (UIView *)view;
--(void)reloadData;
+- (void)handleAction : (SwipeDirection ) direction andView: (UIView *)view;
+- (void)reloadData;
 
 @end
 

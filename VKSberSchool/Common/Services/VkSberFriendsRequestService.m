@@ -9,6 +9,8 @@
 #import "VkSberFriendsRequestService.h"
 #import "NSUserDefaultsService.h"
 #import "VkSberFriendsModel.h"
+#import "AppDelegate.h"
+#import "Friends+CoreDataClass.h"
 #import "NetworkService.h"
 #import "NetworkHelper.h"
 #import "Constant.h"
@@ -18,6 +20,9 @@
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 @property (strong, nonatomic) NetworkService *nerworkService;
 @property (strong, nonatomic) NetworkHelper *nerworkHepler;
+@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
+@property (nonatomic, strong) NSMutableArray <Friends *> *userInfoArray;
+@property (nonatomic, strong) NSFetchRequest *fetchRequest;
 
 @end
 
@@ -41,7 +46,6 @@
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	
 	[dictionary setObject:@"photo_100" forKey:VkSberFields];
-	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
 	
 	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberFriendsGet withParametrs:dictionary];
 	
@@ -51,7 +55,6 @@
 - (void)getFriends: (void (^) (NSArray *urlArray)) completion
 {
 	[self getFriendsList:^(NSDictionary *data) {
-		NSMutableArray *friendsArray = [NSMutableArray new];
 		NSDictionary *user = data[@"response"];
 		
 		NSArray *array = user[@"items"];
@@ -63,18 +66,53 @@
 			NSString *name = friend[@"first_name"];
 			NSString *lastName = friend[@"last_name"];
 			NSString *url_m = friend[@"photo_100"];
-			NSString *userId = friend[@"id"];
+			NSString *userId = [friend[@"id"] stringValue];
 			NSString *userName = [NSString stringWithFormat: @"%@ %@", name, lastName];
 			
-			VkSberFriendsModel *model = [[VkSberFriendsModel alloc] initWithUserName:userName userID:userId url:url_m];
-			[friendsArray addObject:model];
+			Friends *friends = [NSEntityDescription insertNewObjectForEntityForName:@"Friends" inManagedObjectContext:self.coreDataContext];
+
+			friends.userName = userName;
+			friends.userID = userId;
+			friends.photoURL = url_m;
 			
+			
+			NSError *error = nil;
+			
+			if (![friends.managedObjectContext save:&error])
+			{
+				NSLog(@"Не удалось сохранить объект");
+				NSLog(@"%@, %@", error, error.localizedDescription);
+			}
 		}
-		
-		completion(friendsArray);
+		self.userInfoArray = [self updatedArray].mutableCopy;
+		completion(self.userInfoArray);
 	} failureBlock:^(NSInteger code) {
 		NSLog(@"Обработка ошибки");
 	}];
+}
+
+- (NSManagedObjectContext *)coreDataContext
+{
+	UIApplication *application = [UIApplication sharedApplication];
+	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
+	persistentContainer;
+	NSManagedObjectContext *context = container.viewContext;
+	
+	return context;
+}
+
+- (NSArray *)updatedArray;
+{
+	NSError *error = nil;
+	
+	NSArray *result = [self.coreDataContext executeFetchRequest:self.fetchRequest ? : [Friends fetchRequest] error:&error];
+	return result;
+}
+
+- (NSFetchRequest *)fetchRequest
+{
+		NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Friends"];
+		return fetchRequest;
 }
 
 @end
