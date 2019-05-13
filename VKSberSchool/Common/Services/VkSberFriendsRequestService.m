@@ -111,8 +111,8 @@
 
 - (NSFetchRequest *)fetchRequest
 {
-		NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Friends"];
-		return fetchRequest;
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Friends"];
+	return fetchRequest;
 }
 
 @end
