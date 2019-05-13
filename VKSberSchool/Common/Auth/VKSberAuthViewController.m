@@ -9,10 +9,7 @@
 #import "VKSberAuthViewController.h"
 #import "VkAuthService.h"
 #import "NSUserDefaultsService.h"
-#import "VkSberProfileViewController.h"
-#import "VkSberFriendsViewController.h"
-#import "NSUserDefaultsService.h"
-#import "VkSberProfilePresenter.h"
+#import "VkSberProfileAssembly.h"
 #import "Constant.h"
 
 @interface VKSberAuthViewController ()<WKNavigationDelegate>
@@ -20,6 +17,7 @@
 @property (strong, nonatomic) VkAuthService *service;
 @property (strong, nonatomic) WKWebView *authWebView;
 @property (strong, nonatomic) NSUserDefaultsService *userDufaultService;
+@property (strong, nonatomic) VkSberProfileAssembly *build;
 
 @end
 
@@ -30,6 +28,7 @@
 	[super viewDidLoad];
 	self.userDufaultService = [NSUserDefaultsService new];
 	self.service = [VkAuthService new];
+	self.build = [VkSberProfileAssembly new];
 	self.authWebView = [[WKWebView alloc] initWithFrame:self.view.frame];
 	[self.view addSubview:self.authWebView];
 	self.authWebView.navigationDelegate = self;
@@ -48,41 +47,17 @@
 		[self.authWebView removeFromSuperview];
 		[self.userDufaultService saveAccessToken:accessToken];
 		[self performToProfile:accessToken];
-	}
-	
+	}	
 }
 
 
 -(void)performToProfile: (NSString *) token
 {
 	[self.service authorization:^{
-		VkSberProfileViewController *profileCiewController = [[VkSberProfileViewController alloc] init];
-		UINavigationController *navigationProfileController = [[UINavigationController alloc] initWithRootViewController:profileCiewController];
-		
-		VkSberProfilePresenter *presenter = [[VkSberProfilePresenter alloc] initWithUserId:@""];
-		profileCiewController.presenterOutput = presenter;
-		
-		VkSberFriendsViewController *friendsviewController = [[VkSberFriendsViewController alloc] init];
-		UINavigationController *navigationFriendsController = [[UINavigationController alloc] initWithRootViewController:friendsviewController];
-		
-		navigationProfileController.tabBarItem.title = @"Профиль";
-		navigationProfileController.tabBarItem.image = [UIImage imageNamed:@"profile"];
-		
-		navigationFriendsController.tabBarItem.title = @"Друзья";
-		navigationFriendsController.tabBarItem.image = [UIImage imageNamed:@"friends"];
-		
-		NSArray *viewControllerArray = @[navigationProfileController, navigationFriendsController];
-		UITabBarController *tabBarViewController = [[UITabBarController alloc] init];
-		tabBarViewController.tabBar.translucent = YES;
-		tabBarViewController.tabBar.tintColor = [UIColor whiteColor];
-		tabBarViewController.tabBar.barTintColor = [UIColor blackColor];
-		
-		tabBarViewController.viewControllers = viewControllerArray;
+		UITabBarController *tabBarViewController = [self.build buildProfile:@""];
 		[self presentViewController:tabBarViewController animated:NO completion: nil];
 	} failureBlock:^{
-		
 	} authToken:token];
-	
 }
 
 @end
