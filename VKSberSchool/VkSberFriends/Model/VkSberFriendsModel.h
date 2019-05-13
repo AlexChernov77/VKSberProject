@@ -14,6 +14,14 @@
 @property (strong, nonatomic) NSString *photoURL;
 @property (strong, nonatomic) NSString *userName;
 
+/**
+ Инициализирует модель
+ @param userName - имя
+ @param userID - др
+ @param photoUrl - город
+ @return action
+ */
+
 -(instancetype)initWithUserName: (NSString *)userName
 						 userID: (NSString *)userID
 							url: (NSString *)photoUrl;

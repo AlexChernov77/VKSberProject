@@ -11,7 +11,16 @@
 
 @interface VkSberFriendsViewController : UIViewController<VkSberFriendsViewLoadedProtocol>
 
+/**
+ делегат презентера
+ */
+
 @property (nonatomic, strong, nullable) id<VkSberFriendsPresenterOutPutProtocol> presenterOutput;
+
+/**
+ делегат презентера
+ */
+
 @property (nonatomic, strong, nullable) id<VkSberFriendsPresenterInputProtocol> presenterInput;
 
 @end

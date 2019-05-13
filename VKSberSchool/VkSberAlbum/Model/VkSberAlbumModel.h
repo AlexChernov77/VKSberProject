@@ -12,6 +12,12 @@
 
 @property (strong, nonatomic) NSString *photoURL;
 
+/**
+ Инициализирует model
+ @param photoUrl - url
+ @return model
+ */
+
 -(instancetype)initWithURL: (NSString *)photoUrl;
 
 @end

@@ -11,6 +11,10 @@
 
 @interface VkSberPhotoAlbumAssembly : NSObject
 
+/**
+ сборка модуля альбома
+ */
+
 -(VkSberPhotoAlbumViewController *)buildPhoto : (NSString *)userID;
 
 @end

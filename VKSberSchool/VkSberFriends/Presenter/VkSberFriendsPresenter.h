@@ -12,6 +12,10 @@
 
 @interface VkSberFriendsPresenter : NSObject<VkSberFriendsPresenterOutPutProtocol, VkSberFriendsPresenterInputProtocol>
 
+/**
+ делегат вью
+ */
+
 @property (nonatomic, weak, nullable) id<VkSberFriendsViewLoadedProtocol> view;
 
 @end

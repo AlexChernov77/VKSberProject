@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VkSberPhotoAlbumViewController : UIViewController<VkSberPhotoAlbumPresenterInputProtocol>
 
+/**
+ делегат презентера
+ */
+
 @property (nonatomic, strong, nullable) id<VkSberPhotoAlbumPresenterOutPutProtocol> presenterOutput;
 
 @end

@@ -11,6 +11,10 @@
 
 @interface CustomView : UIView
 
+/**
+ отрисовка ячейки
+ */
+
 -(void)configureSelf: (VkSberAlbumModel *) model;
 
 @end

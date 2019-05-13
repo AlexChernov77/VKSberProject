@@ -12,6 +12,11 @@
 
 @interface VkSberFriendsTableViewCell : UITableViewCell
 
+
+/**
+ метод который отрисовывает ячейку
+ */
+
 -(void)configureCell: (VkSberFriendsModel *)model;
 
 @end

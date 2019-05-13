@@ -13,7 +13,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VkSberPhotoAlbumPresenter : NSObject <VkSberPhotoAlbumPresenterOutPutProtocol>
 
+/**
+ делегат вью
+ */
+
 @property (nonatomic, weak, nullable) id<VkSberPhotoAlbumPresenterInputProtocol> presenterInput;
+
+/**
+ Инициализирует presenter
+ @param userID - userID
+ @return presenter
+ */
 
 - (instancetype)initWithUserID: (NSString *) userID;
 
