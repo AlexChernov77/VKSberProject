@@ -17,6 +17,10 @@
 @property(weak, nonatomic) id<SwipableViewsDelegate> delegate;
 
 
+/**
+ регистрируем массив View которые будем вайпать
+ */
+
 - (void)registerNib:(NSMutableArray *)views;
 - (void)handleAction : (SwipeDirection ) direction andView: (UIView *)view;
 - (void)reloadData;
