@@ -88,7 +88,6 @@
 	self.avatarImage.layer.borderWidth = 2;
 	self.avatarImage.contentMode = UIViewContentModeScaleAspectFill;
 	self.avatarImage.layer.borderColor = UIColor.blackColor.CGColor;
-	self.avatarImage.backgroundColor = UIColor.blueColor;
 	self.avatarImage.layer.cornerRadius = 10;
 	self.avatarImage.clipsToBounds = YES;
 	

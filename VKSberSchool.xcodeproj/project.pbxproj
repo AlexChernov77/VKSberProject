@@ -21,8 +21,6 @@
 		7EBE7C9E22863F7A00E3B421 /* UIImageView+AsyncDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C9D22863F7A00E3B421 /* UIImageView+AsyncDownload.m */; };
 		7EBE7CA322871FE200E3B421 /* VkSberPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */; };
 		7EBE7CA6228721BB00E3B421 /* VkSberAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7CA5228721BB00E3B421 /* VkSberAlbumModel.m */; };
-		7EE219B2227A68E000BCDDAB /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE219B1227A68E000BCDDAB /* CustomView.m */; };
-		7EE379282287718B00D9A7EA /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE379272287718B00D9A7EA /* CustomView.xib */; };
 		7EE3792B22885EA300D9A7EA /* VkSberFriendsRequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3792A22885EA300D9A7EA /* VkSberFriendsRequestService.m */; };
 		7EE3792E2288753100D9A7EA /* VkSberFriendsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3792D2288753100D9A7EA /* VkSberFriendsModel.m */; };
 		7EE379312288939300D9A7EA /* VkSberFriendsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379302288939300D9A7EA /* VkSberFriendsTableViewCell.m */; };
@@ -33,6 +31,7 @@
 		7EE37954228952C300D9A7EA /* VkSberProfileAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE37953228952C300D9A7EA /* VkSberProfileAssembly.m */; };
 		7EE379982289A0F700D9A7EA /* Friends+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379962289A0F700D9A7EA /* Friends+CoreDataClass.m */; };
 		7EE379992289A0F700D9A7EA /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */; };
+		7EE3799C2289C0B800D9A7EA /* CustomsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3799B2289C0B800D9A7EA /* CustomsView.m */; };
 		7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */; };
 		7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */; };
 		7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D622843B5D004E3535 /* VkAuthService.m */; };
@@ -87,9 +86,6 @@
 		7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberPhotoAlbumViewController.m; sourceTree = "<group>"; };
 		7EBE7CA4228721BB00E3B421 /* VkSberAlbumModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberAlbumModel.h; sourceTree = "<group>"; };
 		7EBE7CA5228721BB00E3B421 /* VkSberAlbumModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberAlbumModel.m; sourceTree = "<group>"; };
-		7EE219B0227A68E000BCDDAB /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
-		7EE219B1227A68E000BCDDAB /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
-		7EE379272287718B00D9A7EA /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		7EE3792922885EA300D9A7EA /* VkSberFriendsRequestService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsRequestService.h; sourceTree = "<group>"; };
 		7EE3792A22885EA300D9A7EA /* VkSberFriendsRequestService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsRequestService.m; sourceTree = "<group>"; };
 		7EE3792C2288753100D9A7EA /* VkSberFriendsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsModel.h; sourceTree = "<group>"; };
@@ -113,6 +109,8 @@
 		7EE379952289A0F700D9A7EA /* Friends+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataClass.h"; sourceTree = "<group>"; };
 		7EE379962289A0F700D9A7EA /* Friends+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataClass.m"; sourceTree = "<group>"; };
 		7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7EE3799A2289C0B800D9A7EA /* CustomsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomsView.h; sourceTree = "<group>"; };
+		7EE3799B2289C0B800D9A7EA /* CustomsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomsView.m; sourceTree = "<group>"; };
 		7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsViewController.h; sourceTree = "<group>"; };
 		7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsViewController.m; sourceTree = "<group>"; };
 		7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfileViewController.h; sourceTree = "<group>"; };
@@ -340,11 +338,10 @@
 		7EE3794D2289516300D9A7EA /* view */ = {
 			isa = PBXGroup;
 			children = (
-				7EE219B0227A68E000BCDDAB /* CustomView.h */,
-				7EE219B1227A68E000BCDDAB /* CustomView.m */,
-				7EE379272287718B00D9A7EA /* CustomView.xib */,
 				7EBE7CA122871FE200E3B421 /* VkSberPhotoAlbumViewController.h */,
 				7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */,
+				7EE3799A2289C0B800D9A7EA /* CustomsView.h */,
+				7EE3799B2289C0B800D9A7EA /* CustomsView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 			files = (
 				1F17640C2240323B0085818C /* LaunchScreen.storyboard in Resources */,
 				1F1764092240323B0085818C /* Assets.xcassets in Resources */,
-				7EE379282287718B00D9A7EA /* CustomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +586,7 @@
 				7EBE7C8B2284E12100E3B421 /* VkSberPhotosRequestService.m in Sources */,
 				7EE37934228896BA00D9A7EA /* VkSberFriendsPresenter.m in Sources */,
 				1F17640F2240323B0085818C /* main.m in Sources */,
-				7EE219B2227A68E000BCDDAB /* CustomView.m in Sources */,
+				7EE3799C2289C0B800D9A7EA /* CustomsView.m in Sources */,
 				7EBE7C9A22862C4F00E3B421 /* VkSberEmptyLoadingView.m in Sources */,
 				1F17642C22403E330085818C /* VKSBSwipableView.m in Sources */,
 				7EFB95DE22843C54004E3535 /* VKSberAuthViewController.m in Sources */,

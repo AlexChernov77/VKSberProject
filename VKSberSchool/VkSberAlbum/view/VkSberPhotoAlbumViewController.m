@@ -8,13 +8,15 @@
 
 #import "VkSberPhotoAlbumViewController.h"
 #import "VKSBSwipableView.h"
-#import "CustomView.h"
 #import "VkSberAlbumModel.h"
+#import "CustomsView.h"
 
 
 @interface VkSberPhotoAlbumViewController ()<SwipableViewsDataSource, SwipableViewsDelegate>
 
 @property (strong, nonatomic)  VKSBSwipableView *swipeView;
+@property (strong, nonatomic)  CustomsView *customView;
+@property (strong, nonatomic) NSMutableArray *viewsArray;
 
 @end
 
@@ -32,11 +34,15 @@
 {
 	self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
 	self.swipeView = [VKSBSwipableView new];
-	self.swipeView.frame = self.view.frame;
-	
+	self.swipeView.frame = CGRectMake(10, 10, CGRectGetWidth(self.view.frame) - 20, CGRectGetHeight(self.view.frame) - 20);
+	self.viewsArray = [NSMutableArray new];
+	for (int i = 0; i < 3; i++)
+	{
+		self.customView = [CustomsView new];
+		[self.viewsArray addObject:self.customView];
+	}
 	[self.view addSubview:self.swipeView];
-	UINib *nib = [UINib nibWithNibName:@"CustomView" bundle:nil];
-	[self.swipeView registerNib:nib];
+	[self.swipeView registerNib:self.viewsArray];
 	self.swipeView.dataSource = self;
 	self.swipeView.delegate = self;
 }
@@ -58,7 +64,7 @@
 - (void)view:(UIView *)view atIndex:(NSInteger)index
 {
 	VkSberAlbumModel *model = [self.presenterOutput entityAt:index];
-	[(CustomView*)view configureSelf: model];
+	[(CustomsView*)view configureSelf: model];
 }
 
 

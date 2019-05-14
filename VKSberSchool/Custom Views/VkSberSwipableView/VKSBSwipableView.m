@@ -12,6 +12,7 @@
 @interface VKSBSwipableView()
 
 @property (nonatomic) UINib *nib;
+@property (nonatomic) UIView *customView;
 @property (copy, nonatomic) NSArray *visibleView;
 @property (assign, nonatomic) NSInteger visibleIndex;
 @property (assign, nonatomic) NSInteger modelsCount;
@@ -23,9 +24,9 @@
 
 @implementation VKSBSwipableView
 
-- (void)registerNib:(UINib *)nib
+- (void)registerNib:(NSMutableArray *)views
 {
-	self.nib = nib;
+	self.views = views;
 }
 
 - (void)setDataSource:(id<SwipableViewsDataSource>)dataSource
@@ -76,7 +77,7 @@
 	
 	for (int i = 0; i < number; i++)
 	{
-		UIView *rawView = [self.nib instantiateWithOwner:nil options:nil][0];
+		UIView *rawView = self.views[i];
 		
 		[self.dataSource view:rawView atIndex:indexCounter];
 		rawView.frame = self.bounds;

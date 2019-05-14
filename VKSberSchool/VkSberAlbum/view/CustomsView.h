@@ -1,20 +1,22 @@
 //
-//  CustomView.h
+//  CustomsView.h
 //  VKSberSchool
 //
-//  Created by Александр on 02/05/2019.
+//  Created by Александр on 13/05/2019.
 //  Copyright © 2019 Александр. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "VkSberAlbumModel.h"
 
-@interface CustomView : UIView
+NS_ASSUME_NONNULL_BEGIN
 
-/**
- отрисовка ячейки
- */
+@interface CustomsView : UIView
+
 
 -(void)configureSelf: (VkSberAlbumModel *) model;
 
+
 @end
+
+NS_ASSUME_NONNULL_END
