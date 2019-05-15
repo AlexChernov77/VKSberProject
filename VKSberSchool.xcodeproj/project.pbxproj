@@ -32,6 +32,8 @@
 		7EE379982289A0F700D9A7EA /* Friends+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379962289A0F700D9A7EA /* Friends+CoreDataClass.m */; };
 		7EE379992289A0F700D9A7EA /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */; };
 		7EE3799C2289C0B800D9A7EA /* CustomsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3799B2289C0B800D9A7EA /* CustomsView.m */; };
+		7EE379E9228C31E900D9A7EA /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE379E7228C30FD00D9A7EA /* OCMock.framework */; };
+		7EE379EC228C321F00D9A7EA /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EE379E7228C30FD00D9A7EA /* OCMock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */; };
 		7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */; };
 		7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D622843B5D004E3535 /* VkAuthService.m */; };
@@ -53,6 +55,19 @@
 			remoteInfo = VKSberSchool;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7EE379EB228C321900D9A7EA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EE379EC228C321F00D9A7EA /* OCMock.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F1763F9224032380085818C /* VKSberSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKSberSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +126,7 @@
 		7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7EE3799A2289C0B800D9A7EA /* CustomsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomsView.h; sourceTree = "<group>"; };
 		7EE3799B2289C0B800D9A7EA /* CustomsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomsView.m; sourceTree = "<group>"; };
+		7EE379E7228C30FD00D9A7EA /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = ../OCMock.framework; sourceTree = "<group>"; };
 		7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsViewController.h; sourceTree = "<group>"; };
 		7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsViewController.m; sourceTree = "<group>"; };
 		7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfileViewController.h; sourceTree = "<group>"; };
@@ -145,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE379E9228C31E900D9A7EA /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +174,7 @@
 				1F1763FB224032380085818C /* VKSberSchool */,
 				1F1764172240323B0085818C /* VKSberSchoolTests */,
 				1F1763FA224032380085818C /* Products */,
+				7EE379E6228C30FD00D9A7EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -465,6 +483,14 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		7EE379E6228C30FD00D9A7EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EE379E7228C30FD00D9A7EA /* OCMock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -492,6 +518,7 @@
 				1F1764102240323B0085818C /* Sources */,
 				1F1764112240323B0085818C /* Frameworks */,
 				1F1764122240323B0085818C /* Resources */,
+				7EE379EB228C321900D9A7EA /* CopyFiles */,
 			);
 			buildRules = (
 			);

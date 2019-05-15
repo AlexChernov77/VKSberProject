@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+@import OCMock;
+
 @interface VKSberSchoolTests : XCTestCase
 
 @end
