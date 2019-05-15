@@ -172,11 +172,11 @@
 		1F1763FB224032380085818C /* VKSberSchool */ = {
 			isa = PBXGroup;
 			children = (
-				7EBE7CA022871FC100E3B421 /* VkSberAlbum */,
-				7EFB95CD22843ACF004E3535 /* VkSberFriends */,
-				7EFB95D322843B18004E3535 /* VkSberMyProfile */,
-				7EFB95D222843B06004E3535 /* Common */,
-				1F176426224032880085818C /* Custom Views */,
+				7EE379CA228C1A4800D9A7EA /* Common */,
+				7EE379BF228C19BE00D9A7EA /* Custom Views */,
+				7EE379B8228C193A00D9A7EA /* VkSberFriends */,
+				7EE379AC228C188900D9A7EA /* VkSberMyProfile */,
+				7EE3799D228C179400D9A7EA /* VkSberAlbum */,
 				1F1763FC224032380085818C /* AppDelegate.h */,
 				1F1763FD224032380085818C /* AppDelegate.m */,
 				1F1764082240323B0085818C /* Assets.xcassets */,
@@ -198,69 +198,250 @@
 			path = VKSberSchoolTests;
 			sourceTree = "<group>";
 		};
-		1F176426224032880085818C /* Custom Views */ = {
+		7EE3799D228C179400D9A7EA /* VkSberAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				7EE379432288AF6C00D9A7EA /* VkSberSwipableView */,
-				1F17642722403C4D0085818C /* interfaces */,
-				7EFB95ED228493F8004E3535 /* VkSberCustomUILabel.h */,
-				7EFB95EE228493F8004E3535 /* VkSberCustomUILabel.m */,
-				7EBE7C9822862C4F00E3B421 /* VkSberEmptyLoadingView.h */,
-				7EBE7C9922862C4F00E3B421 /* VkSberEmptyLoadingView.m */,
+				7EE379DF228C1B9900D9A7EA /* Presenter */,
+				7EE379A5228C17E500D9A7EA /* DI */,
+				7EE379A3228C17D700D9A7EA /* view */,
+				7EE379A2228C17D000D9A7EA /* Model */,
 			);
-			path = "Custom Views";
+			name = VkSberAlbum;
 			sourceTree = "<group>";
 		};
-		1F17642722403C4D0085818C /* interfaces */ = {
+		7EE379A2228C17D000D9A7EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1F17642822403C640085818C /* SwipableViewsDataSource.h */,
-				1F17642922403CFA0085818C /* SwipableViewsDelegate.h */,
+				7EBE7CA4228721BB00E3B421 /* VkSberAlbumModel.h */,
+				7EBE7CA5228721BB00E3B421 /* VkSberAlbumModel.m */,
 			);
-			path = interfaces;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		7EBE7CA022871FC100E3B421 /* VkSberAlbum */ = {
+		7EE379A3228C17D700D9A7EA /* view */ = {
 			isa = PBXGroup;
 			children = (
-				7EE37950228951EE00D9A7EA /* Presenter */,
-				7EE3794E228951CB00D9A7EA /* Model */,
-				7EE3794D2289516300D9A7EA /* view */,
-				7EE3794F228951D700D9A7EA /* DI */,
+				7EBE7CA122871FE200E3B421 /* VkSberPhotoAlbumViewController.h */,
+				7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */,
+				7EE3799A2289C0B800D9A7EA /* CustomsView.h */,
+				7EE3799B2289C0B800D9A7EA /* CustomsView.m */,
 			);
-			path = VkSberAlbum;
+			name = view;
 			sourceTree = "<group>";
 		};
-		7EE3793A2288AEBB00D9A7EA /* view */ = {
+		7EE379A5228C17E500D9A7EA /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				7EE3792F2288939300D9A7EA /* VkSberFriendsTableViewCell.h */,
-				7EE379302288939300D9A7EA /* VkSberFriendsTableViewCell.m */,
-				7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */,
-				7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */,
+				7EE379462288C02700D9A7EA /* VkSberPhotoAlbumAssembly.h */,
+				7EE379472288C02700D9A7EA /* VkSberPhotoAlbumAssembly.m */,
 			);
-			path = view;
+			name = DI;
 			sourceTree = "<group>";
 		};
-		7EE3793B2288AEC600D9A7EA /* protocols */ = {
+		7EE379AC228C188900D9A7EA /* VkSberMyProfile */ = {
 			isa = PBXGroup;
 			children = (
-				7EE37935228896D700D9A7EA /* VkSberFriendsPresenterProtocol.h */,
-				7EE379392288A56900D9A7EA /* VkSberFriendsViewLoadedProtocol.h */,
+				7EE379DC228C1B7B00D9A7EA /* DI */,
+				7EE379B3228C18BB00D9A7EA /* Protocols */,
+				7EE379B1228C18AD00D9A7EA /* Model */,
+				7EE379AF228C18A200D9A7EA /* Presenter */,
+				7EE379AE228C189C00D9A7EA /* view */,
 			);
-			path = protocols;
+			name = VkSberMyProfile;
 			sourceTree = "<group>";
 		};
-		7EE3793C2288AED000D9A7EA /* Presenter */ = {
+		7EE379AE228C189C00D9A7EA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */,
+				7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		7EE379AF228C18A200D9A7EA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7EBE7C922285FDEF00E3B421 /* VkSberProfilePresenter.h */,
+				7EBE7C932285FDEF00E3B421 /* VkSberProfilePresenter.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		7EE379B1228C18AD00D9A7EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EBE7C952285FE0200E3B421 /* VkSberProfileModel.h */,
+				7EBE7C962285FE0200E3B421 /* VkSberProfileModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7EE379B3228C18BB00D9A7EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7EBE7C9B228630C300E3B421 /* VkSberProfilePresenterProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		7EE379B8228C193A00D9A7EA /* VkSberFriends */ = {
+			isa = PBXGroup;
+			children = (
+				7EE379E5228C1BD600D9A7EA /* view */,
+				7EE379E1228C1BBE00D9A7EA /* Model */,
+				7EE379BD228C196100D9A7EA /* DI */,
+				7EE379BB228C194E00D9A7EA /* Protocols */,
+				7EE379BA228C194900D9A7EA /* Presenter */,
+			);
+			name = VkSberFriends;
+			sourceTree = "<group>";
+		};
+		7EE379BA228C194900D9A7EA /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				7EE37932228896BA00D9A7EA /* VkSberFriendsPresenter.h */,
 				7EE37933228896BA00D9A7EA /* VkSberFriendsPresenter.m */,
 			);
-			path = Presenter;
+			name = Presenter;
 			sourceTree = "<group>";
 		};
-		7EE3793D2288AEDC00D9A7EA /* Model */ = {
+		7EE379BB228C194E00D9A7EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7EE37935228896D700D9A7EA /* VkSberFriendsPresenterProtocol.h */,
+				7EE379392288A56900D9A7EA /* VkSberFriendsViewLoadedProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		7EE379BD228C196100D9A7EA /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				7EE379362288A48F00D9A7EA /* VkSberFriendsAssembly.h */,
+				7EE379372288A48F00D9A7EA /* VkSberFriendsAssembly.m */,
+			);
+			name = DI;
+			sourceTree = "<group>";
+		};
+		7EE379BF228C19BE00D9A7EA /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95ED228493F8004E3535 /* VkSberCustomUILabel.h */,
+				7EFB95EE228493F8004E3535 /* VkSberCustomUILabel.m */,
+				7EBE7C9822862C4F00E3B421 /* VkSberEmptyLoadingView.h */,
+				7EBE7C9922862C4F00E3B421 /* VkSberEmptyLoadingView.m */,
+				7EE379CC228C1A5B00D9A7EA /* VkSberSwipableView */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7EE379C1228C19D700D9A7EA /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				1F17642822403C640085818C /* SwipableViewsDataSource.h */,
+				1F17642922403CFA0085818C /* SwipableViewsDelegate.h */,
+			);
+			name = interfaces;
+			sourceTree = "<group>";
+		};
+		7EE379CA228C1A4800D9A7EA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7EE379D8228C1B0600D9A7EA /* Auth */,
+				7EE379D2228C1AC700D9A7EA /* Services */,
+				7EE379CF228C1AA500D9A7EA /* Constant */,
+				7EE379CE228C1A8D00D9A7EA /* Extension */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		7EE379CC228C1A5B00D9A7EA /* VkSberSwipableView */ = {
+			isa = PBXGroup;
+			children = (
+				1F17642A22403E330085818C /* VKSBSwipableView.h */,
+				1F17642B22403E330085818C /* VKSBSwipableView.m */,
+				7EE379C1228C19D700D9A7EA /* interfaces */,
+			);
+			name = VkSberSwipableView;
+			sourceTree = "<group>";
+		};
+		7EE379CE228C1A8D00D9A7EA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7EBE7C9C22863F7A00E3B421 /* UIImageView+AsyncDownload.h */,
+				7EBE7C9D22863F7A00E3B421 /* UIImageView+AsyncDownload.m */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		7EE379CF228C1AA500D9A7EA /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95EA22843D49004E3535 /* Constant.h */,
+				7EFB95EB22843D49004E3535 /* Constant.m */,
+			);
+			name = Constant;
+			sourceTree = "<group>";
+		};
+		7EE379D2228C1AC700D9A7EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95D922843B9C004E3535 /* NSUserDefaultsService.h */,
+				7EFB95DA22843B9C004E3535 /* NSUserDefaultsService.m */,
+				7EFB95DF22843CBC004E3535 /* VkSberUserInfoService.h */,
+				7EFB95E022843CBC004E3535 /* VkSberUserInfoService.m */,
+				7EBE7C892284E12100E3B421 /* VkSberPhotosRequestService.h */,
+				7EBE7C8A2284E12100E3B421 /* VkSberPhotosRequestService.m */,
+				7EE3792922885EA300D9A7EA /* VkSberFriendsRequestService.h */,
+				7EE3792A22885EA300D9A7EA /* VkSberFriendsRequestService.m */,
+				7EE379D4228C1AD700D9A7EA /* NetworkService */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		7EE379D4228C1AD700D9A7EA /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95E322843CF8004E3535 /* NetworkHelper.h */,
+				7EFB95E422843CF8004E3535 /* NetworkHelper.m */,
+				7EFB95E622843D1A004E3535 /* NetworkService.h */,
+				7EFB95E722843D1A004E3535 /* NetworkService.m */,
+			);
+			name = NetworkService;
+			sourceTree = "<group>";
+		};
+		7EE379D8228C1B0600D9A7EA /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB95D522843B5D004E3535 /* VkAuthService.h */,
+				7EFB95D622843B5D004E3535 /* VkAuthService.m */,
+				7EFB95DC22843C54004E3535 /* VKSberAuthViewController.h */,
+				7EFB95DD22843C54004E3535 /* VKSberAuthViewController.m */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		7EE379DC228C1B7B00D9A7EA /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				7EE37952228952C300D9A7EA /* VkSberProfileAssembly.h */,
+				7EE37953228952C300D9A7EA /* VkSberProfileAssembly.m */,
+			);
+			name = DI;
+			sourceTree = "<group>";
+		};
+		7EE379DF228C1B9900D9A7EA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7EE379492288C22D00D9A7EA /* VkSberPhotoAlbumPresenter.h */,
+				7EE3794A2288C22D00D9A7EA /* VkSberPhotoAlbumPresenter.m */,
+				7EE3794C2288C38300D9A7EA /* VkSberPhotoAlbumPresenterProtocol.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		7EE379E1228C1BBE00D9A7EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7EE379942289A0F700D9A7EA /* Friends+CoreDataProperties.h */,
@@ -270,199 +451,18 @@
 				7EE3792C2288753100D9A7EA /* VkSberFriendsModel.h */,
 				7EE3792D2288753100D9A7EA /* VkSberFriendsModel.m */,
 			);
-			path = Model;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		7EE3793E2288AEEF00D9A7EA /* Assembly */ = {
+		7EE379E5228C1BD600D9A7EA /* view */ = {
 			isa = PBXGroup;
 			children = (
-				7EE379362288A48F00D9A7EA /* VkSberFriendsAssembly.h */,
-				7EE379372288A48F00D9A7EA /* VkSberFriendsAssembly.m */,
+				7EE3792F2288939300D9A7EA /* VkSberFriendsTableViewCell.h */,
+				7EE379302288939300D9A7EA /* VkSberFriendsTableViewCell.m */,
+				7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */,
+				7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */,
 			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		7EE3793F2288AF0400D9A7EA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */,
-				7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7EE379402288AF0A00D9A7EA /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				7EBE7C922285FDEF00E3B421 /* VkSberProfilePresenter.h */,
-				7EBE7C932285FDEF00E3B421 /* VkSberProfilePresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		7EE379412288AF1200D9A7EA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7EBE7C952285FE0200E3B421 /* VkSberProfileModel.h */,
-				7EBE7C962285FE0200E3B421 /* VkSberProfileModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7EE379422288AF1A00D9A7EA /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7EBE7C9B228630C300E3B421 /* VkSberProfilePresenterProtocol.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		7EE379432288AF6C00D9A7EA /* VkSberSwipableView */ = {
-			isa = PBXGroup;
-			children = (
-				1F17642A22403E330085818C /* VKSBSwipableView.h */,
-				1F17642B22403E330085818C /* VKSBSwipableView.m */,
-			);
-			path = VkSberSwipableView;
-			sourceTree = "<group>";
-		};
-		7EE379442288AFDB00D9A7EA /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				7EBE7C9C22863F7A00E3B421 /* UIImageView+AsyncDownload.h */,
-				7EBE7C9D22863F7A00E3B421 /* UIImageView+AsyncDownload.m */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		7EE3794D2289516300D9A7EA /* view */ = {
-			isa = PBXGroup;
-			children = (
-				7EBE7CA122871FE200E3B421 /* VkSberPhotoAlbumViewController.h */,
-				7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */,
-				7EE3799A2289C0B800D9A7EA /* CustomsView.h */,
-				7EE3799B2289C0B800D9A7EA /* CustomsView.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		7EE3794E228951CB00D9A7EA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7EBE7CA4228721BB00E3B421 /* VkSberAlbumModel.h */,
-				7EBE7CA5228721BB00E3B421 /* VkSberAlbumModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7EE3794F228951D700D9A7EA /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				7EE379462288C02700D9A7EA /* VkSberPhotoAlbumAssembly.h */,
-				7EE379472288C02700D9A7EA /* VkSberPhotoAlbumAssembly.m */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		7EE37950228951EE00D9A7EA /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				7EE379492288C22D00D9A7EA /* VkSberPhotoAlbumPresenter.h */,
-				7EE3794A2288C22D00D9A7EA /* VkSberPhotoAlbumPresenter.m */,
-				7EE3794C2288C38300D9A7EA /* VkSberPhotoAlbumPresenterProtocol.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		7EE37951228952A600D9A7EA /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				7EE37952228952C300D9A7EA /* VkSberProfileAssembly.h */,
-				7EE37953228952C300D9A7EA /* VkSberProfileAssembly.m */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		7EFB95CD22843ACF004E3535 /* VkSberFriends */ = {
-			isa = PBXGroup;
-			children = (
-				7EE3793E2288AEEF00D9A7EA /* Assembly */,
-				7EE3793D2288AEDC00D9A7EA /* Model */,
-				7EE3793C2288AED000D9A7EA /* Presenter */,
-				7EE3793B2288AEC600D9A7EA /* protocols */,
-				7EE3793A2288AEBB00D9A7EA /* view */,
-			);
-			path = VkSberFriends;
-			sourceTree = "<group>";
-		};
-		7EFB95D222843B06004E3535 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				7EE379442288AFDB00D9A7EA /* Extension */,
-				7EFB95E922843D3A004E3535 /* Constant */,
-				7EFB95D822843B89004E3535 /* Services */,
-				7EFB95D422843B4B004E3535 /* Auth */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		7EFB95D322843B18004E3535 /* VkSberMyProfile */ = {
-			isa = PBXGroup;
-			children = (
-				7EE37951228952A600D9A7EA /* DI */,
-				7EE379422288AF1A00D9A7EA /* Protocols */,
-				7EE379412288AF1200D9A7EA /* Model */,
-				7EE379402288AF0A00D9A7EA /* Presenter */,
-				7EE3793F2288AF0400D9A7EA /* View */,
-			);
-			path = VkSberMyProfile;
-			sourceTree = "<group>";
-		};
-		7EFB95D422843B4B004E3535 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				7EFB95D522843B5D004E3535 /* VkAuthService.h */,
-				7EFB95D622843B5D004E3535 /* VkAuthService.m */,
-				7EFB95DC22843C54004E3535 /* VKSberAuthViewController.h */,
-				7EFB95DD22843C54004E3535 /* VKSberAuthViewController.m */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		7EFB95D822843B89004E3535 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				7EFB95E222843CE8004E3535 /* NetworkService */,
-				7EFB95D922843B9C004E3535 /* NSUserDefaultsService.h */,
-				7EFB95DA22843B9C004E3535 /* NSUserDefaultsService.m */,
-				7EFB95DF22843CBC004E3535 /* VkSberUserInfoService.h */,
-				7EFB95E022843CBC004E3535 /* VkSberUserInfoService.m */,
-				7EBE7C892284E12100E3B421 /* VkSberPhotosRequestService.h */,
-				7EBE7C8A2284E12100E3B421 /* VkSberPhotosRequestService.m */,
-				7EE3792922885EA300D9A7EA /* VkSberFriendsRequestService.h */,
-				7EE3792A22885EA300D9A7EA /* VkSberFriendsRequestService.m */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		7EFB95E222843CE8004E3535 /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				7EFB95E322843CF8004E3535 /* NetworkHelper.h */,
-				7EFB95E422843CF8004E3535 /* NetworkHelper.m */,
-				7EFB95E622843D1A004E3535 /* NetworkService.h */,
-				7EFB95E722843D1A004E3535 /* NetworkService.m */,
-			);
-			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		7EFB95E922843D3A004E3535 /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				7EFB95EA22843D49004E3535 /* Constant.h */,
-				7EFB95EB22843D49004E3535 /* Constant.m */,
-			);
-			path = Constant;
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -46,7 +46,6 @@
 		[dictionary setObject: self.userID forKey:VkSberUserId];
 	}
 	[dictionary setObject:@"bdate,education,photo_max,city" forKey:VkSberFields];
-	[dictionary setObject: [self.userDefaultsService getAccessToken] forKey:VkSberToken];
 	
 	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberUserGet withParametrs:dictionary];
 	
