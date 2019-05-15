@@ -12,14 +12,14 @@
 #import "AppDelegate.h"
 #import "Friends+CoreDataClass.h"
 #import "NetworkService.h"
-#import "NetworkHelper.h"
+#import "NetworkConfigureRequestService.h"
 #import "Constant.h"
 
 @interface VkSberFriendsRequestService()
 
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 @property (strong, nonatomic) NetworkService *nerworkService;
-@property (strong, nonatomic) NetworkHelper *nerworkHepler;
+@property (strong, nonatomic) NetworkConfigureRequestService *nerworkHepler;
 @property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
 @property (nonatomic, strong) NSMutableArray <Friends *> *userInfoArray;
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
@@ -34,7 +34,7 @@
 	{
 		_userDefaultsService = [NSUserDefaultsService new];
 		_nerworkService = [NetworkService new];
-		_nerworkHepler = [NetworkHelper new];
+		_nerworkHepler = [NetworkConfigureRequestService new];
 	}
 	return self;
 }

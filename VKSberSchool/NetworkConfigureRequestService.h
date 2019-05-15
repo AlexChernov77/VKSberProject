@@ -1,5 +1,5 @@
 //
-//  NetworkHelper.h
+//  NetworkConfigureRequestService.h
 //  VKSberSchool
 //
 //  Created by Александр on 09/05/2019.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NetworkHelper : NSObject
+@interface NetworkConfigureRequestService : NSObject
 
 -(NSURLRequest *)createGetRequest: (NSString *) baseURL vkMethod: (NSString *) method withParametrs: (NSDictionary *) paremetrs;
 

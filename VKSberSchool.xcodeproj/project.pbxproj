@@ -38,7 +38,7 @@
 		7EFB95DB22843B9C004E3535 /* NSUserDefaultsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95DA22843B9C004E3535 /* NSUserDefaultsService.m */; };
 		7EFB95DE22843C54004E3535 /* VKSberAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95DD22843C54004E3535 /* VKSberAuthViewController.m */; };
 		7EFB95E122843CBC004E3535 /* VkSberUserInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E022843CBC004E3535 /* VkSberUserInfoService.m */; };
-		7EFB95E522843CF8004E3535 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E422843CF8004E3535 /* NetworkHelper.m */; };
+		7EFB95E522843CF8004E3535 /* NetworkConfigureRequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E422843CF8004E3535 /* NetworkConfigureRequestService.m */; };
 		7EFB95E822843D1A004E3535 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E722843D1A004E3535 /* NetworkService.m */; };
 		7EFB95EC22843D49004E3535 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95EB22843D49004E3535 /* Constant.m */; };
 		7EFB95EF228493F8004E3535 /* VkSberCustomUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95EE228493F8004E3535 /* VkSberCustomUILabel.m */; };
@@ -123,8 +123,8 @@
 		7EFB95DD22843C54004E3535 /* VKSberAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKSberAuthViewController.m; sourceTree = "<group>"; };
 		7EFB95DF22843CBC004E3535 /* VkSberUserInfoService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberUserInfoService.h; sourceTree = "<group>"; };
 		7EFB95E022843CBC004E3535 /* VkSberUserInfoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberUserInfoService.m; sourceTree = "<group>"; };
-		7EFB95E322843CF8004E3535 /* NetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
-		7EFB95E422843CF8004E3535 /* NetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		7EFB95E322843CF8004E3535 /* NetworkConfigureRequestService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkConfigureRequestService.h; sourceTree = "<group>"; };
+		7EFB95E422843CF8004E3535 /* NetworkConfigureRequestService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkConfigureRequestService.m; sourceTree = "<group>"; };
 		7EFB95E622843D1A004E3535 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
 		7EFB95E722843D1A004E3535 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 		7EFB95EA22843D49004E3535 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -403,8 +403,8 @@
 		7EE379D4228C1AD700D9A7EA /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				7EFB95E322843CF8004E3535 /* NetworkHelper.h */,
-				7EFB95E422843CF8004E3535 /* NetworkHelper.m */,
+				7EFB95E322843CF8004E3535 /* NetworkConfigureRequestService.h */,
+				7EFB95E422843CF8004E3535 /* NetworkConfigureRequestService.m */,
 				7EFB95E622843D1A004E3535 /* NetworkService.h */,
 				7EFB95E722843D1A004E3535 /* NetworkService.m */,
 			);
@@ -579,7 +579,7 @@
 				7EE3792E2288753100D9A7EA /* VkSberFriendsModel.m in Sources */,
 				7EBE7C972285FE0200E3B421 /* VkSberProfileModel.m in Sources */,
 				7EFB95E822843D1A004E3535 /* NetworkService.m in Sources */,
-				7EFB95E522843CF8004E3535 /* NetworkHelper.m in Sources */,
+				7EFB95E522843CF8004E3535 /* NetworkConfigureRequestService.m in Sources */,
 				7EFB95EF228493F8004E3535 /* VkSberCustomUILabel.m in Sources */,
 				7EBE7CA322871FE200E3B421 /* VkSberPhotoAlbumViewController.m in Sources */,
 				7EBE7C942285FDEF00E3B421 /* VkSberProfilePresenter.m in Sources */,

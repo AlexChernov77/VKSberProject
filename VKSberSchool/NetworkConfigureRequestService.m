@@ -1,22 +1,22 @@
 //
-//  NetworkHelper.m
+//  NetworkConfigureRequestService.m
 //  VKSberSchool
 //
 //  Created by Александр on 09/05/2019.
 //  Copyright © 2019 Александр. All rights reserved.
 //
 
-#import "NetworkHelper.h"
+#import "NetworkConfigureRequestService.h"
 #import "NSUserDefaultsService.h"
 
-@interface NetworkHelper()
+@interface NetworkConfigureRequestService()
 
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 
 @end
 
 
-@implementation NetworkHelper
+@implementation NetworkConfigureRequestService
 
 -(instancetype) init
 {

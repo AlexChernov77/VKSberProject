@@ -8,7 +8,7 @@
 #import "VkSberPhotosRequestService.h"
 #import "NSUserDefaultsService.h"
 #import "NetworkService.h"
-#import "NetworkHelper.h"
+#import "NetworkConfigureRequestService.h"
 #import "VkSberAlbumModel.h"
 #import "Constant.h"
 
@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 @property (strong, nonatomic) NetworkService *nerworkService;
-@property (strong, nonatomic) NetworkHelper *nerworkHepler;
+@property (strong, nonatomic) NetworkConfigureRequestService *nerworkHepler;
 @property (strong, nonnull) NSString *userID;
 
 @end
@@ -29,7 +29,7 @@
 	{
 		_userDefaultsService = [NSUserDefaultsService new];
 		_nerworkService = [NetworkService new];
-		_nerworkHepler = [NetworkHelper new];
+		_nerworkHepler = [NetworkConfigureRequestService new];
 		_userID = userID;
 	}
 	return self;
