@@ -7,7 +7,7 @@
 //
 
 #import "VkSberFriendsTableViewCell.h"
-#import "UIImageView+AsyncDownload.h"
+#import "VkSberUIImageView+AsyncDownload.h"
 
 @interface VkSberFriendsTableViewCell()
 

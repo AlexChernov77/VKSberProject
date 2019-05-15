@@ -10,7 +10,7 @@
 #import "VkSberCustomUILabel.h"
 #import "VkSberProfileModel.h"
 #import "VkSberEmptyLoadingView.h"
-#import "UIImageView+AsyncDownload.h"
+#import "VkSberUIImageView+AsyncDownload.h"
 #import "VkSberPhotoAlbumViewController.h"
 
 @interface VkSberProfileViewController ()

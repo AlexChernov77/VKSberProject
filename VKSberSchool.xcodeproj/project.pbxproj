@@ -18,7 +18,7 @@
 		7EBE7C942285FDEF00E3B421 /* VkSberProfilePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C932285FDEF00E3B421 /* VkSberProfilePresenter.m */; };
 		7EBE7C972285FE0200E3B421 /* VkSberProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C962285FE0200E3B421 /* VkSberProfileModel.m */; };
 		7EBE7C9A22862C4F00E3B421 /* VkSberEmptyLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C9922862C4F00E3B421 /* VkSberEmptyLoadingView.m */; };
-		7EBE7C9E22863F7A00E3B421 /* UIImageView+AsyncDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C9D22863F7A00E3B421 /* UIImageView+AsyncDownload.m */; };
+		7EBE7C9E22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C9D22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.m */; };
 		7EBE7CA322871FE200E3B421 /* VkSberPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */; };
 		7EBE7CA6228721BB00E3B421 /* VkSberAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7CA5228721BB00E3B421 /* VkSberAlbumModel.m */; };
 		7EE3792B22885EA300D9A7EA /* VkSberFriendsRequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3792A22885EA300D9A7EA /* VkSberFriendsRequestService.m */; };
@@ -80,8 +80,8 @@
 		7EBE7C9822862C4F00E3B421 /* VkSberEmptyLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberEmptyLoadingView.h; sourceTree = "<group>"; };
 		7EBE7C9922862C4F00E3B421 /* VkSberEmptyLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberEmptyLoadingView.m; sourceTree = "<group>"; };
 		7EBE7C9B228630C300E3B421 /* VkSberProfilePresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfilePresenterProtocol.h; sourceTree = "<group>"; };
-		7EBE7C9C22863F7A00E3B421 /* UIImageView+AsyncDownload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AsyncDownload.h"; sourceTree = "<group>"; };
-		7EBE7C9D22863F7A00E3B421 /* UIImageView+AsyncDownload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AsyncDownload.m"; sourceTree = "<group>"; };
+		7EBE7C9C22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VkSberUIImageView+AsyncDownload.h"; sourceTree = "<group>"; };
+		7EBE7C9D22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "VkSberUIImageView+AsyncDownload.m"; sourceTree = "<group>"; };
 		7EBE7CA122871FE200E3B421 /* VkSberPhotoAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberPhotoAlbumViewController.h; sourceTree = "<group>"; };
 		7EBE7CA222871FE200E3B421 /* VkSberPhotoAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberPhotoAlbumViewController.m; sourceTree = "<group>"; };
 		7EBE7CA4228721BB00E3B421 /* VkSberAlbumModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberAlbumModel.h; sourceTree = "<group>"; };
@@ -369,8 +369,8 @@
 		7EE379CE228C1A8D00D9A7EA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				7EBE7C9C22863F7A00E3B421 /* UIImageView+AsyncDownload.h */,
-				7EBE7C9D22863F7A00E3B421 /* UIImageView+AsyncDownload.m */,
+				7EBE7C9C22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.h */,
+				7EBE7C9D22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.m */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -593,7 +593,7 @@
 				7EE37954228952C300D9A7EA /* VkSberProfileAssembly.m in Sources */,
 				1F1763FE224032380085818C /* AppDelegate.m in Sources */,
 				7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */,
-				7EBE7C9E22863F7A00E3B421 /* UIImageView+AsyncDownload.m in Sources */,
+				7EBE7C9E22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.m in Sources */,
 				7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */,
 				7EFB95DB22843B9C004E3535 /* NSUserDefaultsService.m in Sources */,
 				7EFB95EC22843D49004E3535 /* Constant.m in Sources */,

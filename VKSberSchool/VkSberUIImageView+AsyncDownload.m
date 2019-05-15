@@ -6,7 +6,7 @@
 //  Copyright © 2019 Александр. All rights reserved.
 //
 
-#import "UIImageView+AsyncDownload.h"
+#import "VkSberUIImageView+AsyncDownload.h"
 
 @implementation UIImageView (AsyncDownload)
 
