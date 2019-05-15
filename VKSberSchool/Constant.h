@@ -24,9 +24,9 @@ extern NSString *const VkSberFriendsGet; /**< friends.get */
 #pragma mark - Arguments
 
 extern NSString *const VkSberToken; /**< Токен авторизации */
-extern NSString *const VkSberUserId; /**< Токен авторизации */
-extern NSString *const VkSberOwnerId; /**< Токен авторизации */
-extern NSString *const VkSberPhotoSizes; /**< Токен авторизации */
-extern NSString *const VkSberCount; /**< Токен авторизации */
-extern NSString *const VkSberOffset; /**< Токен авторизации */
-extern NSString *const VkSberFields; /**< Токен авторизации */
+extern NSString *const VkSberUserId; /**< айди пользователя */
+extern NSString *const VkSberOwnerId; /**< айди друга*/
+extern NSString *const VkSberPhotoSizes; /**< размер фото*/
+extern NSString *const VkSberCount; /**< количетство фоток */
+extern NSString *const VkSberOffset; /**< отступ */
+extern NSString *const VkSberFields; /**< поля которые передаем в запрос */

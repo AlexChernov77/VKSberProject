@@ -11,7 +11,7 @@
 
 @implementation VkSberPhotoAlbumAssembly
 
--(VkSberPhotoAlbumViewController *)buildPhoto : (NSString *)userID
+- (VkSberPhotoAlbumViewController *)buildPhoto : (NSString *)userID
 {
 	VkSberPhotoAlbumViewController *viewController = [VkSberPhotoAlbumViewController new];
 	VkSberPhotoAlbumPresenter *presenter = [[VkSberPhotoAlbumPresenter alloc] initWithUserID:userID];

@@ -17,6 +17,6 @@
  метод который отрисовывает ячейку
  */
 
--(void)configureCell: (VkSberFriendsModel *)model;
+- (void)configureCell: (VkSberFriendsModel *)model;
 
 @end

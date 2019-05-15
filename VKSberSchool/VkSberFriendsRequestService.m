@@ -15,6 +15,7 @@
 #import "NetworkConfigureRequestService.h"
 #import "Constant.h"
 
+
 @interface VkSberFriendsRequestService()
 
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
@@ -25,6 +26,7 @@
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
 
 @end
+
 
 @implementation VkSberFriendsRequestService
 

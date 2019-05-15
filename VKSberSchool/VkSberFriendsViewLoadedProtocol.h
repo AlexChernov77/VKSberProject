@@ -11,7 +11,7 @@
 
 @protocol VkSberFriendsViewLoadedProtocol <NSObject>
 
--(void) reloadData;
--(void) assign: (id<VkSberFriendsPresenterInputProtocol>) presenterInput : (id<VkSberFriendsPresenterOutPutProtocol>) presenterOutput;
+- (void) reloadData;
+- (void) assign: (id<VkSberFriendsPresenterInputProtocol>) presenterInput : (id<VkSberFriendsPresenterOutPutProtocol>) presenterOutput;
 
 @end

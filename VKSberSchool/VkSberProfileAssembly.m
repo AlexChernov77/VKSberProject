@@ -13,7 +13,7 @@
 
 @implementation VkSberProfileAssembly
 
--(UITabBarController *)buildProfile : (NSString *)userID
+- (UITabBarController *)buildProfile : (NSString *)userID
 {
 	VkSberProfileViewController *profileCiewController = [[VkSberProfileViewController alloc] init];
 	UINavigationController *navigationProfileController = [[UINavigationController alloc] initWithRootViewController:profileCiewController];

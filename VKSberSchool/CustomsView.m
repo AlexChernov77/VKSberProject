@@ -28,18 +28,18 @@
 	return self;
 }
 
--(void)layoutSubviews
+- (void)layoutSubviews
 {
 	[super layoutSubviews];
 	[self layoutAvatarImage];
 }
 
--(void)layoutAvatarImage
+- (void)layoutAvatarImage
 {
 	self.avatarImage.frame = self.frame;
 }
 
--(void)configureSelf: (VkSberAlbumModel *) model
+- (void)configureSelf: (VkSberAlbumModel *) model
 {
 	[self.avatarImage loadImage:model.photoURL];
 }

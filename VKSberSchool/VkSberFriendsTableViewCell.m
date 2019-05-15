@@ -39,7 +39,7 @@
 	[super prepareForReuse];
 }
 
--(void)configureCell: (VkSberFriendsModel *)model
+- (void)configureCell: (VkSberFriendsModel *)model
 {
 	[self.avatarImage loadImage:model.photoURL];
 	self.userName.text = model.userName;
@@ -48,7 +48,7 @@
 
 #pragma mark - Layout and Setup
 
--(void)layoutSubviews
+- (void)layoutSubviews
 {
 	[super layoutSubviews];
 	[self layoutAvatarImage];
@@ -61,17 +61,17 @@
 
 }
 
--(void)layoutAvatarImage
+- (void)layoutAvatarImage
 {
 	self.avatarImage.frame = CGRectMake(15, self.frame.size.height / 2 - 35, 70, 70);
 }
 
--(void)layoutUserNameLabel
+- (void)layoutUserNameLabel
 {
 	self.userName.frame = CGRectMake(CGRectGetMaxX(self.avatarImage.frame) + 15, self.frame.size.height / 2 - 25, 400, 50);
 }
 
--(void)setupAvatarImage
+- (void)setupAvatarImage
 {
 	self.avatarImage = [UIImageView new];
 	self.avatarImage.layer.cornerRadius = 35;
@@ -79,7 +79,7 @@
 	[self.contentView addSubview:self.avatarImage];
 }
 
--(void)setupUserNameLabel
+- (void)setupUserNameLabel
 {
 	self.userName = [UILabel new];
 	[self.contentView addSubview:self.userName];

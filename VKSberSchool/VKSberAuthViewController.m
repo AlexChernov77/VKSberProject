@@ -12,6 +12,7 @@
 #import "VkSberProfileAssembly.h"
 #import "Constant.h"
 
+
 @interface VKSberAuthViewController ()<WKNavigationDelegate>
 
 @property (strong, nonatomic) VkAuthService *service;
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) VkSberProfileAssembly *build;
 
 @end
+
 
 @implementation VKSberAuthViewController
 
@@ -36,7 +38,7 @@
 	[self.view.window makeKeyAndVisible];
 }
 
--(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
 	
 	NSString *accessToken = [self.service stringBetweenString:@"access_token="
@@ -51,7 +53,7 @@
 }
 
 
--(void)performToProfile: (NSString *) token
+- (void)performToProfile: (NSString *) token
 {
 	[self.service authorization:^{
 		UITabBarController *tabBarViewController = [self.build buildProfile:@""];

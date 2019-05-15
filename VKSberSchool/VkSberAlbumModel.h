@@ -18,7 +18,7 @@
  @return model
  */
 
--(instancetype)initWithURL: (NSString *)photoUrl;
+- (instancetype)initWithURL: (NSString *)photoUrl;
 
 @end
 

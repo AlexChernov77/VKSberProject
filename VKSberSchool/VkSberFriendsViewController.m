@@ -34,7 +34,7 @@
 }
 
 
--(void)setupUI
+- (void)setupUI
 {
 	self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
 	self.tableView.rowHeight = 100;
@@ -45,7 +45,7 @@
 	self.tableView.delegate = self;
 }
 
--(void)setupLoadingView
+- (void)setupLoadingView
 {
 	self.loadingView = [[VkSberEmptyLoadingView alloc] initWithFrame:self.view.frame];
 	

@@ -26,11 +26,11 @@
  @return action
  */
 
--(instancetype)initWithUserName: (NSString *)name
-					   birthday: (NSString *)bday
-						   city: (NSString *)city
-					 educations: (NSString *)education
-							url: (NSString *)photoUrl;
+- (instancetype)initWithUserName: (NSString *)name
+					    birthday: (NSString *)bday
+						    city: (NSString *)city
+					  educations: (NSString *)education
+							 url: (NSString *)photoUrl;
 
 
 @end

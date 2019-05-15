@@ -36,7 +36,7 @@
 	[self setupUI];
 }
 
--(void)setupUI
+- (void)setupUI
 {
 	[self setupNavigationBar];
 	[self setupAvatarImage];
@@ -53,7 +53,7 @@
 #pragma mark - Action
 
 
--(void)perfomToAlbum
+- (void)perfomToAlbum
 {
 	VkSberPhotoAlbumViewController *viewController = [self.presenterOutput perfomToPhoto];
 	[self.navigationController pushViewController:viewController animated:NO];
@@ -62,7 +62,7 @@
 #pragma mark - Setup
 
 
--(void)setupNavigationBar
+- (void)setupNavigationBar
 {
 	self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
 	self.navigationItem.title = @"Profile";
@@ -71,7 +71,7 @@
 	self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
 }
 
--(void)setupLoadingView
+- (void)setupLoadingView
 {
 	self.loadingView = [[VkSberEmptyLoadingView alloc] initWithFrame:self.view.frame];
 	
@@ -80,7 +80,7 @@
 	self.loadingView.hidden = YES;
 }
 
--(void)setupAvatarImage
+- (void)setupAvatarImage
 {
 	NSInteger vertivcalMargin = [[UIScreen mainScreen]bounds].size.width <= 320 ? 94 : 104;
 	
@@ -94,7 +94,7 @@
 	[self.view addSubview:self.avatarImage];
 }
 
--(void)setupAlbumButton
+- (void)setupAlbumButton
 {
 	self.albumButton = [[UIButton alloc] initWithFrame:self.avatarImage.frame];
 	[self.albumButton addTarget:self action:@selector(perfomToAlbum) forControlEvents:UIControlEventTouchUpInside];
@@ -102,7 +102,7 @@
 	[self.view addSubview:self.albumButton];
 }
 
--(void)setupUserNameLabel
+- (void)setupUserNameLabel
 {
 	self.userNamelabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.avatarImage.frame) + 30,
 																   CGRectGetWidth(self.view.frame), 25)];
@@ -111,7 +111,7 @@
 	[self.view addSubview:self.userNamelabel];
 }
 
--(void)setupBdayLabel
+- (void)setupBdayLabel
 {
 	self.bdayTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.userNamelabel.frame) + 20, 120, 15)
 									 textColor: UIColor.lightGrayColor
@@ -126,7 +126,7 @@
 	[self.view addSubview:self.bdayLabel];
 }
 
--(void)setupCityLabel
+- (void)setupCityLabel
 {
 	self.cityTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.bdayTitleLabel.frame) + 20, 120, 15)
 												  textColor: UIColor.lightGrayColor
@@ -141,7 +141,7 @@
 	[self.view addSubview:self.cityLabel];
 }
 
--(void)setupGraduateLabel
+- (void)setupGraduateLabel
 {
 	self.graduateTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.cityTitleLabel.frame) + 20, 120, 15)
 												  textColor: UIColor.lightGrayColor
@@ -160,7 +160,7 @@
 #pragma mark - Request
 
 
--(void)gerUserRequest
+- (void)gerUserRequest
 {
 	self.loadingView.hidden = NO;
 	[self.presenterOutput loadUser:^(VkSberProfileModel *user) {
@@ -170,7 +170,7 @@
 	
 }
 
--(void)updateUI: (VkSberProfileModel *) user
+- (void)updateUI: (VkSberProfileModel *) user
 {
 	self.userNamelabel.text = user.userName;
 	self.cityLabel.text = user.city;

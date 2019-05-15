@@ -10,7 +10,9 @@
 #import "NSUserDefaultsService.h"
 #import <WebKit/WebKit.h>
 
+
 @interface VkAuthService : NSObject
+
 
 /**
  авторизация, отрабатывает блок success при успехе, failure при не удаче

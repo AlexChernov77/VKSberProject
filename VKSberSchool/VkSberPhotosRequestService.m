@@ -12,6 +12,7 @@
 #import "VkSberAlbumModel.h"
 #import "Constant.h"
 
+
 @interface VkSberPhotosRequestService()
 
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
@@ -21,9 +22,10 @@
 
 @end
 
+
 @implementation VkSberPhotosRequestService
 
--(instancetype) initWithUserID: (NSString *) userID
+- (instancetype) initWithUserID: (NSString *) userID
 {
 	if (self = [super init])
 	{
@@ -35,7 +37,7 @@
 	return self;
 }
 
--(void)getMyAlbum: (void (^) (NSDictionary *data)) success
+- (void)getMyAlbum: (void (^) (NSDictionary *data)) success
 		  failureBlock : (void (^) (NSInteger code)) failure
 {
 	
@@ -56,7 +58,7 @@
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }
 
--(void)getPhotos: (void (^) (NSArray *urlArray)) completion
+- (void)getPhotos: (void (^) (NSArray *urlArray)) completion
 {
 	[self getMyAlbum:^(NSDictionary *data) {
 		NSMutableArray *urlArray = [NSMutableArray new];

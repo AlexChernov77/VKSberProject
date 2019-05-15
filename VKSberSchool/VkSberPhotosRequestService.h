@@ -17,14 +17,14 @@
  @return action
  */
 
--(instancetype) initWithUserID: (NSString *) userID;
+- (instancetype) initWithUserID: (NSString *) userID;
 
 
 /**
  отпрака запроса на получение фотографий, отрабатывает блок compection при успехе
  */
 
--(void)getPhotos: (void (^) (NSArray *urlArray)) completion;
+- (void)getPhotos: (void (^) (NSArray *urlArray)) completion;
 
 
 @end

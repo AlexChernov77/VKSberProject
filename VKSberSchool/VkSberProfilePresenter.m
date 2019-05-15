@@ -23,7 +23,7 @@
 
 @implementation VkSberProfilePresenter
 
--(instancetype)initWithUserId: (NSString *)userID
+- (instancetype)initWithUserId: (NSString *)userID
 {
 	if (self = [super init])
 	{

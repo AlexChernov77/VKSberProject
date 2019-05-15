@@ -15,7 +15,7 @@
  сборка модуля альбома
  */
 
--(VkSberPhotoAlbumViewController *)buildPhoto : (NSString *)userID;
+- (VkSberPhotoAlbumViewController *)buildPhoto : (NSString *)userID;
 
 @end
 

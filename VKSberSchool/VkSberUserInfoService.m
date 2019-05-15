@@ -13,6 +13,7 @@
 #import "VkSberProfileModel.h"
 #import "Constant.h"
 
+
 @interface VkSberUserInfoService()
 
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
@@ -22,9 +23,10 @@
 
 @end
 
+
 @implementation VkSberUserInfoService
 
--(instancetype) initWithUserID: (NSString *) userID
+- (instancetype) initWithUserID: (NSString *) userID
 {
 	if (self = [super init])
 	{
@@ -36,10 +38,9 @@
 	return self;
 }
 
--(void)getMyProfileInfo: (void (^) (NSDictionary *data)) success
+- (void)getMyProfileInfo: (void (^) (NSDictionary *data)) success
 		  failureBlock : (void (^) (NSInteger code)) failure
 {
-	
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	if (![self.userID  isEqual: @""])
 	{
@@ -52,7 +53,7 @@
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }
 
--(void)getUsers: (void (^) (NSArray *urlArray)) completion
+- (void)getUsers: (void (^) (NSArray *urlArray)) completion
 {
 	[self getMyProfileInfo:^(NSDictionary *data) {
 		NSMutableArray *urlArray = [NSMutableArray new];

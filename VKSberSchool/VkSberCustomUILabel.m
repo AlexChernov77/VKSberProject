@@ -11,8 +11,8 @@
 @implementation VkSberCustomUILabel
 
 - (instancetype)init: (CGRect) frame textColor: (UIColor *) color
-													font: (UIFont *) textFont
-											   textLabel: (NSString *) text
+										  font: (UIFont *) textFont
+									 textLabel: (NSString *) text
 {
 	if (self = [super init])
 	{

@@ -30,7 +30,7 @@
 	[self.presenterOutput loadPhotos];
 }
 
--(void)setupUI
+- (void)setupUI
 {
 	self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
 	self.swipeView = [VKSBSwipableView new];

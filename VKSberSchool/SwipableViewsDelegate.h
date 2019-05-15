@@ -6,11 +6,11 @@
 //  Copyright © 2019 Александр. All rights reserved.
 //
 
-typedef enum
+typedef NS_ENUM(NSUInteger, SwipeDirection)
 {
 	left,
 	right
-} SwipeDirection;
+};
 
 @protocol SwipableViewsDelegate <NSObject>
 

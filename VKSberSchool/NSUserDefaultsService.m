@@ -8,11 +8,13 @@
 
 #import "NSUserDefaultsService.h"
 
+
 @interface NSUserDefaultsService()
 
 @property (nonatomic, strong) NSUserDefaults* userDefaults;
 
 @end
+
 
 @implementation NSUserDefaultsService
 
@@ -26,7 +28,7 @@
 	return self;
 }
 
--(void)saveAccessToken: (NSString *) searchString
+- (void)saveAccessToken: (NSString *) searchString
 {
 	[self.userDefaults setObject:searchString forKey:@"accessToken"];
 }

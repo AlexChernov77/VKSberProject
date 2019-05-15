@@ -24,7 +24,7 @@
 
 @implementation VkSberFriendsPresenter
 
--(instancetype)init
+- (instancetype)init
 {
 	if(self = [super init])
 	{

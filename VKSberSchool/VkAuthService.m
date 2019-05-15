@@ -16,8 +16,8 @@
 
 @end
 
-@implementation VkAuthService
 
+@implementation VkAuthService
 
 - (void)authorization: (void (^) (void)) success failureBlock: (void (^) (void)) failure authToken: (NSString *) token
 {
@@ -52,6 +52,5 @@
 	}
 	return nil;
 }
-
 
 @end

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return presenter
  */
 
--(instancetype)initWithUserId: (NSString *)userID;
+- (instancetype)initWithUserId: (NSString *)userID;
 
 @end
 
