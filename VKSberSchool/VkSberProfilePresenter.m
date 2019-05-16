@@ -23,13 +23,13 @@
 
 @implementation VkSberProfilePresenter
 
-- (instancetype)initWithUserId: (NSString *)userID
+- (instancetype)initWithUserId:(NSString *)userID
 {
 	if (self = [super init])
 	{
-		self.userID = userID;
-		self.service = [[VkSberUserInfoService alloc] initWithUserID:userID];
-		self.photoAssembly = [VkSberPhotoAlbumAssembly new];
+		_userID = userID;
+		_service = [[VkSberUserInfoService alloc] initWithUserID:userID];
+		_photoAssembly = [VkSberPhotoAlbumAssembly new];
 	}
 	return self;
 }
@@ -53,7 +53,5 @@
 {
 	return [self.photoAssembly buildPhoto:self.userID];
 }
-
-
 
 @end

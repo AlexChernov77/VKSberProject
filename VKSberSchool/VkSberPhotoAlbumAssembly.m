@@ -11,12 +11,13 @@
 
 @implementation VkSberPhotoAlbumAssembly
 
-- (VkSberPhotoAlbumViewController *)buildPhoto : (NSString *)userID
+- (VkSberPhotoAlbumViewController *)buildPhoto:(NSString *)userID
 {
 	VkSberPhotoAlbumViewController *viewController = [VkSberPhotoAlbumViewController new];
 	VkSberPhotoAlbumPresenter *presenter = [[VkSberPhotoAlbumPresenter alloc] initWithUserID:userID];
 	presenter.presenterInput = viewController;
 	viewController.presenterOutput = presenter;
+	
 	return viewController;
 }
 

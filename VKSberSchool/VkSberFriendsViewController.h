@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VkSberFriendsViewLoadedProtocol.h"
 
+
 @interface VkSberFriendsViewController : UIViewController<VkSberFriendsViewLoadedProtocol>
 
 /**

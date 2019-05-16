@@ -27,7 +27,7 @@
 	return self;
 }
 
--(NSURLRequest *)createGetRequest: (NSString *) baseURL vkMethod: (NSString *) method withParametrs: (NSDictionary *) paremetrs
+-(NSURLRequest *)createGetRequest: (NSString *)baseURL vkMethod:(NSString *)method withParametrs:(NSDictionary *)paremetrs
 {
 	NSString *requestString = [NSString stringWithFormat: @"%@%@?", baseURL, method];
 	NSArray *keysArray = paremetrs.allKeys;

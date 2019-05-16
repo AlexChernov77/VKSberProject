@@ -10,8 +10,8 @@
 
 @interface NetworkService : NSObject
 
-- (void)load: (NSURLRequest *) request
-successBlock :(void (^) (NSDictionary *data)) success
-failureBlock : (void (^) (NSInteger code)) failure;
+- (void)load:(NSURLRequest *)request
+successBlock:(void (^) (NSDictionary *data))success
+failureBlock:(void (^) (NSInteger code))failure;
 
 @end

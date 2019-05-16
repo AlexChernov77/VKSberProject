@@ -18,11 +18,11 @@
 
 @implementation VkSberPhotoAlbumPresenter
 
-- (instancetype)initWithUserID: (NSString *)userID
+- (instancetype)initWithUserID:(NSString *)userID
 {
 	if (self = [super init])
 	{
-		self.service = [[VkSberPhotosRequestService alloc] initWithUserID: userID];
+		_service = [[VkSberPhotosRequestService alloc] initWithUserID: userID];
 	}
 	return self;
 }

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  сборка стартового экрана
  */
 
-- (UITabBarController *)buildProfile : (NSString *)userID;
+- (UITabBarController *)buildProfile :(NSString *)userID;
 
 @end
 

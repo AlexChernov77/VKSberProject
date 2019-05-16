@@ -10,10 +10,9 @@
 
 @implementation VkSberFriendsModel
 
-- (instancetype)initWithUserName: (NSString *)userName
-					      userID: (NSString *)userID
-							 url: (NSString *)photoUrl
-
+- (instancetype)initWithUserName:(NSString *)userName
+					      userID:(NSString *)userID
+							 url:(NSString *)photoUrl
 {
 	if (self = [super init])
 	{

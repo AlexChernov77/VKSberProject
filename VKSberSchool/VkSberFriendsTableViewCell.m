@@ -16,6 +16,7 @@
 
 @end
 
+
 @implementation VkSberFriendsTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -39,7 +40,7 @@
 	[super prepareForReuse];
 }
 
-- (void)configureCell: (VkSberFriendsModel *)model
+- (void)configureCell:(VkSberFriendsModel *)model
 {
 	[self.avatarImage loadImage:model.photoURL];
 	self.userName.text = model.userName;
@@ -47,6 +48,7 @@
 
 
 #pragma mark - Layout and Setup
+
 
 - (void)layoutSubviews
 {

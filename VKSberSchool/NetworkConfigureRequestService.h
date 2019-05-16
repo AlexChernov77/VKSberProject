@@ -10,6 +10,6 @@
 
 @interface NetworkConfigureRequestService : NSObject
 
--(NSURLRequest *)createGetRequest: (NSString *) baseURL vkMethod: (NSString *) method withParametrs: (NSDictionary *) paremetrs;
+-(NSURLRequest *)createGetRequest:(NSString *)baseURL vkMethod:(NSString *)method withParametrs:(NSDictionary *)paremetrs;
 
 @end

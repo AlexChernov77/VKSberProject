@@ -8,17 +8,19 @@
 
 #import "VkSberCustomUILabel.h"
 
+
 @implementation VkSberCustomUILabel
 
-- (instancetype)init: (CGRect) frame textColor: (UIColor *) color
-										  font: (UIFont *) textFont
-									 textLabel: (NSString *) text
+- (instancetype)init:(CGRect)frame textColor:(UIColor *)color
+										font:(UIFont *)textFont
+								   textLabel:(NSString *)text
 {
 	if (self = [super init])
 	{
 		self.frame = frame;
-		NSDictionary *txtDict = [NSDictionary dictionaryWithObjectsAndKeys:
-								 textFont, NSFontAttributeName, color, NSForegroundColorAttributeName, nil];
+		NSDictionary *txtDict = [NSDictionary dictionaryWithObjectsAndKeys:textFont,
+											  NSFontAttributeName,color,
+								              NSForegroundColorAttributeName, nil];
 		NSAttributedString *attrStr = [[NSAttributedString alloc]
 									   initWithString:text attributes:txtDict];
 		[self setAttributedText:attrStr];

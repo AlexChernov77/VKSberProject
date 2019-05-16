@@ -28,7 +28,7 @@
 	return self;
 }
 
-- (void)saveAccessToken: (NSString *) searchString
+- (void)saveAccessToken:(NSString *)searchString
 {
 	[self.userDefaults setObject:searchString forKey:@"accessToken"];
 }

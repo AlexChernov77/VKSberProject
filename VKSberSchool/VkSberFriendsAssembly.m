@@ -12,10 +12,9 @@
 
 @implementation VkSberFriendsAssembly
 
-+ (void)assignView :(id<VkSberFriendsViewLoadedProtocol>) view
++ (void)assignView:(id<VkSberFriendsViewLoadedProtocol>)view
 {
-	VkSberFriendsPresenter *presenter = [VkSberFriendsPresenter new];
-	
+	VkSberFriendsPresenter *presenter = [VkSberFriendsPresenter new];	
 	[view assign:presenter : presenter];
 }
 

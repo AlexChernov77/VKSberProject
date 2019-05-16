@@ -25,7 +25,7 @@
 
 @implementation VkSberPhotosRequestService
 
-- (instancetype) initWithUserID: (NSString *) userID
+- (instancetype) initWithUserID:(NSString *)userID
 {
 	if (self = [super init])
 	{
@@ -37,10 +37,9 @@
 	return self;
 }
 
-- (void)getMyAlbum: (void (^) (NSDictionary *data)) success
-		  failureBlock : (void (^) (NSInteger code)) failure
+- (void)getMyAlbum:(void (^) (NSDictionary *data))success
+	  failureBlock:(void (^) (NSInteger code))failure
 {
-	
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	
 	if (![self.userID  isEqual: @""])
@@ -58,27 +57,25 @@
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }
 
-- (void)getPhotos: (void (^) (NSArray *urlArray)) completion
+- (void)getPhotos:(void (^) (NSArray *urlArray))completion
 {
 	[self getMyAlbum:^(NSDictionary *data) {
 		NSMutableArray *urlArray = [NSMutableArray new];
 		NSDictionary *photo = data[@"response"][@"items"];
 		for (NSDictionary *imageJSON in photo)
 		{
-
-		NSArray *photo = imageJSON[@"sizes"];
-		for (int i = 0 ; i < photo.count ; i++)
-		{
-			if ([photo[i][@"type"]  isEqual: @"z"])
+			NSArray *photo = imageJSON[@"sizes"];
+			for (int i = 0 ; i < photo.count ; i++)
 			{
-				NSString *url = (NSString *)photo[i][@"url"];
+				if ([photo[i][@"type"]  isEqual: @"z"])
+				{
+					NSString *url = (NSString *)photo[i][@"url"];
 				
-				VkSberAlbumModel *model = [[VkSberAlbumModel alloc] initWithURL:url];
-				[urlArray addObject:model];
+					VkSberAlbumModel *model = [[VkSberAlbumModel alloc] initWithURL:url];
+					[urlArray addObject:model];
+				}
 			}
 		}
-		}
-		
 		completion(urlArray);
 	} failureBlock:^(NSInteger code) {
 		NSLog(@"Обработка ошибки");

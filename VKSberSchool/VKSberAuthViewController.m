@@ -52,8 +52,7 @@
 	}	
 }
 
-
-- (void)performToProfile: (NSString *) token
+- (void)performToProfile:(NSString *)token
 {
 	[self.service authorization:^{
 		UITabBarController *tabBarViewController = [self.build buildProfile:@""];

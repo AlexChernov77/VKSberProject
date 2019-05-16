@@ -12,7 +12,7 @@
 
 - (void)loadPhotos;
 - (long long int)numberOfEntities;
-- (id) entityAt:(NSInteger) index;
+- (id) entityAt:(NSInteger)index;
 
 @end
 

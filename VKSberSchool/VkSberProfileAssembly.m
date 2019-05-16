@@ -13,7 +13,7 @@
 
 @implementation VkSberProfileAssembly
 
-- (UITabBarController *)buildProfile : (NSString *)userID
+- (UITabBarController *)buildProfile :(NSString *)userID
 {
 	VkSberProfileViewController *profileCiewController = [[VkSberProfileViewController alloc] init];
 	UINavigationController *navigationProfileController = [[UINavigationController alloc] initWithRootViewController:profileCiewController];
@@ -35,8 +35,8 @@
 	tabBarViewController.tabBar.translucent = YES;
 	tabBarViewController.tabBar.tintColor = [UIColor whiteColor];
 	tabBarViewController.tabBar.barTintColor = [UIColor blackColor];
-	
 	tabBarViewController.viewControllers = viewControllerArray;
+	
 	return tabBarViewController;
 }
 

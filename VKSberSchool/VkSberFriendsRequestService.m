@@ -41,24 +41,25 @@
 	return self;
 }
 
-- (void)getFriendsList: (void (^) (NSDictionary *data)) success
-		  failureBlock : (void (^) (NSInteger code)) failure
+- (void)getFriendsList:(void (^) (NSDictionary *data))success
+		  failureBlock:(void (^) (NSInteger code))failure
 {
 	
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
 	
 	[dictionary setObject:@"photo_100" forKey:VkSberFields];
 	
-	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberFriendsGet withParametrs:dictionary];
+	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl
+														vkMethod:VkSberFriendsGet
+												   withParametrs:dictionary];
 	
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }
 
-- (void)getFriends: (void (^) (NSArray *urlArray)) completion
+- (void)getFriends:(void (^) (NSArray *urlArray))completion
 {
 	[self getFriendsList:^(NSDictionary *data) {
 		NSDictionary *user = data[@"response"];
-		
 		NSArray *array = user[@"items"];
 		
 		for (int i = 0; i <array.count; i++)
@@ -71,12 +72,11 @@
 			NSString *userId = [friend[@"id"] stringValue];
 			NSString *userName = [NSString stringWithFormat: @"%@ %@", name, lastName];
 			
-			Friends *friends = [NSEntityDescription insertNewObjectForEntityForName:@"Friends" inManagedObjectContext:self.coreDataContext];
-
+			Friends *friends = [NSEntityDescription insertNewObjectForEntityForName:@"Friends"
+															 inManagedObjectContext:self.coreDataContext];
 			friends.userName = userName;
 			friends.userID = userId;
 			friends.photoURL = url_m;
-			
 			
 			NSError *error = nil;
 			
@@ -96,24 +96,24 @@
 - (NSManagedObjectContext *)coreDataContext
 {
 	UIApplication *application = [UIApplication sharedApplication];
-	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
-	persistentContainer;
+	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).persistentContainer;
 	NSManagedObjectContext *context = container.viewContext;
 	
 	return context;
 }
 
-- (NSArray *)updatedArray;
+- (NSArray *)updatedArray
 {
 	NSError *error = nil;
-	
 	NSArray *result = [self.coreDataContext executeFetchRequest:self.fetchRequest ? : [Friends fetchRequest] error:&error];
+	
 	return result;
 }
 
 - (NSFetchRequest *)fetchRequest
 {
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Friends"];
+	
 	return fetchRequest;
 }
 

@@ -9,21 +9,24 @@
 #import "CustomsView.h"
 #import "VkSberUIImageView+AsyncDownload.h"
 
+
 @interface CustomsView ()
 
 @property (nonatomic, strong) UIImageView *avatarImage;
 
 @end
 
+
 @implementation CustomsView
 
-- (instancetype)init {
+- (instancetype)init
+{
 	self = [super init];
 	if (self) {
-		self.avatarImage = [UIImageView new];
-		self.avatarImage.contentMode = UIViewContentModeScaleAspectFill;
-		self.avatarImage.clipsToBounds = YES;
-		[self addSubview:self.avatarImage];
+		_avatarImage = [UIImageView new];
+		_avatarImage.contentMode = UIViewContentModeScaleAspectFill;
+		_avatarImage.clipsToBounds = YES;
+		[self addSubview:_avatarImage];
 	}
 	return self;
 }
@@ -39,7 +42,7 @@
 	self.avatarImage.frame = self.frame;
 }
 
-- (void)configureSelf: (VkSberAlbumModel *) model
+- (void)configureSelf:(VkSberAlbumModel *)model
 {
 	[self.avatarImage loadImage:model.photoURL];
 }

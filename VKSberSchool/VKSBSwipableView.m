@@ -11,16 +11,16 @@
 
 @interface VKSBSwipableView()
 
-@property (nonatomic) UINib *nib;
-@property (nonatomic) UIView *customView;
-@property (copy, nonatomic) NSArray *visibleView;
-@property (assign, nonatomic) NSInteger visibleIndex;
-@property (assign, nonatomic) NSInteger modelsCount;
-@property (assign, nonatomic) NSInteger visivleReuseViewIndex;
-@property (strong, nonatomic) UIView *swipeView;
-@property (nonatomic, strong) NSMutableArray *views;
+@property (strong,nonatomic) UIView *customView;
+@property (copy,nonatomic) NSArray *visibleView;
+@property (assign,nonatomic) NSInteger visibleIndex;
+@property (assign,nonatomic) NSInteger modelsCount;
+@property (assign,nonatomic) NSInteger visivleReuseViewIndex;
+@property (strong,nonatomic) UIView *swipeView;
+@property (strong,nonatomic) NSMutableArray *views;
 
 @end
+
 
 @implementation VKSBSwipableView
 
@@ -47,13 +47,14 @@
 - (void)drawViews
 {
 	self.modelsCount = self.dataSource.numbersOfViews;
+	
 	if (self.dataSource.numbersOfViews == 0)
 	{
 		return;
 	}
+	
 	NSInteger viewsNumber = self.dataSource.numbersOfViews >= 3 ? 3 : self.modelsCount;
 	[self renderViews:viewsNumber index:self.visibleIndex];
-	
 }
 
 - (void)reloadData
@@ -61,6 +62,7 @@
 	if (self.modelsCount >= [self.dataSource numbersOfViews]) {
 		return;
 	}
+	
 	NSInteger dataDiff = [self.dataSource numbersOfViews] - self.modelsCount;
 	NSInteger viewsDiff = dataDiff > 3 - [self.subviews count] ? 3 - [self.subviews count]  : dataDiff;
 	
@@ -78,16 +80,14 @@
 	for (int i = 0; i < number; i++)
 	{
 		UIView *rawView = self.views[i];
-		
 		[self.dataSource view:rawView atIndex:indexCounter];
 		rawView.frame = self.bounds;
 		[self insertSubview:rawView atIndex:0];
 		[viewsArray addObject:rawView];
 		indexCounter += 1;
 	}
-	
+
 	self.visibleView = [viewsArray count] > 0 ?  viewsArray : self.visibleView;
-	
 	[self addRecognizers];
 }
 
@@ -101,25 +101,21 @@
 	}
 }
 
-- (void)addPanGestureRecognizer : (UIView *)view
+- (void)addPanGestureRecognizer:(UIView *)view
 {
 	UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
-	
 	[view addGestureRecognizer:recognizer];
 }
 
 
-- (void)move : (UIPanGestureRecognizer *)rec
+- (void)move:(UIPanGestureRecognizer *)rec
 {
 	UIView *view = rec.view;
 	CGPoint translation = [rec translationInView:self];
 	CGFloat centerDiff = view.center.x - (self.bounds.size.width / 2.0);
-	
 	CGPoint newCenter = CGPointMake(self.bounds.size.width / 2.0 + translation.x, self.bounds.size.height / 2 + translation.y);
 	view.center = newCenter;
-	
 	CGFloat rotator = self.bounds.size.width / 2 / 0.3;
-	
 	view.transform = CGAffineTransformMakeRotation(centerDiff / rotator);
 	
 	if (rec.state == UIGestureRecognizerStateEnded)
@@ -150,7 +146,7 @@
 	}
 }
 
-- (void)handleAction : (SwipeDirection) direction andView: (UIView *)view
+- (void)handleAction:(SwipeDirection)direction andView:(UIView *)view
 {
 	[self.delegate willSwiped:direction atIndex:self.visibleIndex];
 	[view removeFromSuperview];
@@ -164,8 +160,7 @@
 		}
 	}
 	
-	self.visivleReuseViewIndex = self.visivleReuseViewIndex == 2 ? 0 : self.visivleReuseViewIndex + 1;
-	
+	self.visivleReuseViewIndex = self.visivleReuseViewIndex == 2 ? 0 : self.visivleReuseViewIndex + 1;	
 	[self.dataSource view:view atIndex:self.visibleIndex + 3];
 	view.transform = CGAffineTransformIdentity;
 	view.frame = self.bounds;

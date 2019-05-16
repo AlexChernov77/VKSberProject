@@ -8,11 +8,13 @@
 
 #import "VkSberEmptyLoadingView.h"
 
+
 @interface VkSberEmptyLoadingView()
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 
 @end
+
 
 @implementation VkSberEmptyLoadingView
 

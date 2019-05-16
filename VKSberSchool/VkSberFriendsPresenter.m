@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "Friends+CoreDataClass.h"
 
+
 @interface VkSberFriendsPresenter()
 
 @property (nonatomic, copy) NSArray *friendsArray;
@@ -21,6 +22,7 @@
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
 
 @end
+
 
 @implementation VkSberFriendsPresenter
 
@@ -62,8 +64,8 @@
 - (NSArray *)updatedArray;
 {
 	NSError *error = nil;
-	
 	NSArray *result = [self.coreDataContext executeFetchRequest:self.fetchRequest ? : [Friends fetchRequest] error:&error];
+	
 	return result;
 }
 

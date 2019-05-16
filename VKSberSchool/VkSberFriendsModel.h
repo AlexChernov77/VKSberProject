@@ -22,9 +22,9 @@
  @return action
  */
 
-- (instancetype)initWithUserName: (NSString *)userName
-						  userID: (NSString *)userID
-							 url: (NSString *)photoUrl;
+- (instancetype)initWithUserName:(NSString *)userName
+						  userID:(NSString *)userID
+							 url:(NSString *)photoUrl;
 
 @end
 

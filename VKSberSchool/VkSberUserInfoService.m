@@ -26,7 +26,7 @@
 
 @implementation VkSberUserInfoService
 
-- (instancetype) initWithUserID: (NSString *) userID
+- (instancetype) initWithUserID:(NSString *)userID
 {
 	if (self = [super init])
 	{
@@ -38,22 +38,22 @@
 	return self;
 }
 
-- (void)getMyProfileInfo: (void (^) (NSDictionary *data)) success
-		  failureBlock : (void (^) (NSInteger code)) failure
+- (void)getMyProfileInfo:(void (^) (NSDictionary *data))success
+		    failureBlock:(void (^) (NSInteger code))failure
 {
 	NSMutableDictionary *dictionary = [NSMutableDictionary new];
+	
 	if (![self.userID  isEqual: @""])
 	{
 		[dictionary setObject: self.userID forKey:VkSberUserId];
 	}
+	
 	[dictionary setObject:@"bdate,education,photo_max,city" forKey:VkSberFields];
-	
 	NSURLRequest *request = [self.nerworkHepler createGetRequest:VkSberBaseUrl vkMethod:VkSberUserGet withParametrs:dictionary];
-	
 	[self.nerworkService load:request successBlock:success failureBlock:failure];
 }
 
-- (void)getUsers: (void (^) (NSArray *urlArray)) completion
+- (void)getUsers:(void (^) (NSArray *urlArray))completion
 {
 	[self getMyProfileInfo:^(NSDictionary *data) {
 		NSMutableArray *urlArray = [NSMutableArray new];
@@ -70,10 +70,13 @@
 			NSString *city = cityDictionary[@"title"]  == nil ? @"Не указан" : cityDictionary[@"title"];
 			NSString *userName = [NSString stringWithFormat: @"%@ %@", name, lastName];
 			
-			VkSberProfileModel *model = [[VkSberProfileModel alloc] initWithUserName:userName birthday:bday city:city educations:education url:url_m];
+			VkSberProfileModel *model = [[VkSberProfileModel alloc] initWithUserName:userName
+																			birthday:bday
+																				city:city
+																		  educations:education
+																				 url:url_m];
 			[urlArray addObject:model];
 		}
-		
 		completion(urlArray);
 	} failureBlock:^(NSInteger code) {
 		NSLog(@"Обработка ошибки");

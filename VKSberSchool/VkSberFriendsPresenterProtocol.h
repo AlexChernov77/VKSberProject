@@ -12,13 +12,13 @@
 @protocol VkSberFriendsPresenterOutPutProtocol <NSObject>
 
 - (long long int)numberOfEntities;
-- (id) entityAt:(NSInteger) index;
+- (id)entityAt:(NSInteger)index;
 
 @end
 
 @protocol VkSberFriendsPresenterInputProtocol <NSObject>
 
-- (void)viewLoaded: (id<VkSberFriendsViewLoadedProtocol>) view;
+- (void)viewLoaded:(id<VkSberFriendsViewLoadedProtocol>)view;
 
 @end
 

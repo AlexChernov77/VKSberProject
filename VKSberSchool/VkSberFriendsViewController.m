@@ -15,6 +15,7 @@
 #import "VkSberFriendsModel.h"
 #import "VkSberEmptyLoadingView.h"
 
+
 @interface VkSberFriendsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) VkSberFriendsRequestService *service;
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) VkSberEmptyLoadingView *loadingView;
 
 @end
+
 
 @implementation VkSberFriendsViewController
 
@@ -64,7 +66,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	VkSberFriendsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([VkSberFriendsTableViewCell class]) forIndexPath:indexPath];
-	
 	[cell configureCell: [self.presenterOutput entityAt:indexPath.row]];
 	
 	return cell;

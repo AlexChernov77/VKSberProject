@@ -18,8 +18,7 @@
  авторизация, отрабатывает блок success при успехе, failure при не удаче
  */
 
-- (void)authorization: (void (^) (void)) success failureBlock: (void (^) (void)) failure authToken: (NSString *) token;
-
+- (void)authorization:(void (^) (void))success failureBlock:(void (^) (void))failure authToken:(NSString *)token;
 
 /**
  Обрезает лишний текст для получения токена

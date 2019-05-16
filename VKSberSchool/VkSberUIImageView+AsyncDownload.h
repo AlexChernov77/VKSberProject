@@ -14,6 +14,6 @@
  асинхронная загрузка картинки
 */
 
-- (void)loadImage: (NSString *) urlString;
+- (void)loadImage:(NSString *) urlString;
 
 @end

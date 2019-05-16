@@ -14,6 +14,6 @@ typedef NS_ENUM(NSUInteger, SwipeDirection)
 
 @protocol SwipableViewsDelegate <NSObject>
 
-- (void) willSwiped: (SwipeDirection) direction atIndex: (NSInteger) index;
+- (void)willSwiped:(SwipeDirection)direction atIndex:(NSInteger)index;
 
 @end

@@ -12,7 +12,7 @@
 
 @protocol VkSberProfilePresenterProtocol <NSObject>
 
-- (void)loadUser:(void (^) (VkSberProfileModel *user)) user;
+- (void)loadUser:(void (^) (VkSberProfileModel *user))user;
 - (NSString *)getUserID;
 - (VkSberPhotoAlbumViewController *)perfomToPhoto;
 

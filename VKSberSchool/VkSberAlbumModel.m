@@ -10,8 +10,7 @@
 
 @implementation VkSberAlbumModel
 
-- (instancetype)initWithURL: (NSString *)photoUrl
-
+- (instancetype)initWithURL:(NSString *)photoUrl
 {
 	if (self = [super init])
 	{

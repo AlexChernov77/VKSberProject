@@ -17,7 +17,7 @@
  загрузка вью и сборка
  */
 
-+ (void)assignView :(id<VkSberFriendsViewLoadedProtocol>) view;
++ (void)assignView:(id<VkSberFriendsViewLoadedProtocol>)view;
 
 @end
 

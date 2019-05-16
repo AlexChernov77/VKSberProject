@@ -15,8 +15,7 @@
   отпрака запроса на получение пользователей, отрабатывает блок compection при успехе
  */
 
-- (void)getUsers: (void (^) (NSArray *urlArray)) completion;
-
+- (void)getUsers:(void (^) (NSArray *urlArray))completion;
 
 /**
  Инициализирует акшен
@@ -24,6 +23,6 @@
  @return action
  */
 
-- (instancetype) initWithUserID: (NSString *) userID;
+- (instancetype) initWithUserID:(NSString *)userID;
 
 @end

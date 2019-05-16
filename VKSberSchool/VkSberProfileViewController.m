@@ -13,6 +13,7 @@
 #import "VkSberUIImageView+AsyncDownload.h"
 #import "VkSberPhotoAlbumViewController.h"
 
+
 @interface VkSberProfileViewController ()
 
 @property (nonatomic, strong) UIImageView *avatarImage;
@@ -27,6 +28,7 @@
 @property (nonatomic, strong) VkSberEmptyLoadingView *loadingView;
 
 @end
+
 
 @implementation VkSberProfileViewController
 
@@ -74,7 +76,6 @@
 - (void)setupLoadingView
 {
 	self.loadingView = [[VkSberEmptyLoadingView alloc] initWithFrame:self.view.frame];
-	
 	[self.view addSubview:self.loadingView];
 	[self.view bringSubviewToFront:self.loadingView];
 	self.loadingView.hidden = YES;
@@ -83,8 +84,9 @@
 - (void)setupAvatarImage
 {
 	NSInteger vertivcalMargin = [[UIScreen mainScreen]bounds].size.width <= 320 ? 94 : 104;
-	
-	self.avatarImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, vertivcalMargin, CGRectGetWidth(self.view.frame) - 40, CGRectGetHeight(self.view.frame) / 2.5)];
+	self.avatarImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, vertivcalMargin,
+													CGRectGetWidth(self.view.frame) - 40,
+												  CGRectGetHeight(self.view.frame) / 2.5)];
 	self.avatarImage.layer.borderWidth = 2;
 	self.avatarImage.contentMode = UIViewContentModeScaleAspectFill;
 	self.avatarImage.layer.borderColor = UIColor.blackColor.CGColor;
@@ -108,15 +110,16 @@
 																   CGRectGetWidth(self.view.frame), 25)];
 	self.userNamelabel.textColor = UIColor.whiteColor;
 	self.userNamelabel.font = [UIFont boldSystemFontOfSize:22];
+	
 	[self.view addSubview:self.userNamelabel];
 }
 
 - (void)setupBdayLabel
 {
-	self.bdayTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.userNamelabel.frame) + 20, 120, 15)
+	self.bdayTitleLabel = [[VkSberCustomUILabel alloc] init:CGRectMake(20, CGRectGetMaxY(self.userNamelabel.frame) + 20, 120, 15)
 									 textColor: UIColor.lightGrayColor
 										  font:[UIFont systemFontOfSize:15]
-														   textLabel:@"Дата рождения:"];
+									 textLabel:@"Дата рождения:"];
 	
 	self.bdayLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.bdayTitleLabel.frame) + 10, CGRectGetMaxY(self.userNamelabel.frame) + 20, CGRectGetWidth(self.view.frame), 20)];
 	self.bdayLabel.textColor = UIColor.whiteColor;
@@ -128,8 +131,8 @@
 
 - (void)setupCityLabel
 {
-	self.cityTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.bdayTitleLabel.frame) + 20, 120, 15)
-												  textColor: UIColor.lightGrayColor
+	self.cityTitleLabel = [[VkSberCustomUILabel alloc] init:CGRectMake(20, CGRectGetMaxY(self.bdayTitleLabel.frame) + 20, 120, 15)
+												  textColor:UIColor.lightGrayColor
 													   font:[UIFont systemFontOfSize:15]
 												  textLabel:@"Город:"];
 	
@@ -143,8 +146,8 @@
 
 - (void)setupGraduateLabel
 {
-	self.graduateTitleLabel = [[VkSberCustomUILabel alloc] init: CGRectMake(20, CGRectGetMaxY(self.cityTitleLabel.frame) + 20, 120, 15)
-												  textColor: UIColor.lightGrayColor
+	self.graduateTitleLabel = [[VkSberCustomUILabel alloc] init:CGRectMake(20, CGRectGetMaxY(self.cityTitleLabel.frame) + 20, 120, 15)
+												  textColor:UIColor.lightGrayColor
 													   font:[UIFont systemFontOfSize:15]
 												  textLabel:@"Образование:"];
 	
@@ -170,7 +173,7 @@
 	
 }
 
-- (void)updateUI: (VkSberProfileModel *) user
+- (void)updateUI:(VkSberProfileModel *)user
 {
 	self.userNamelabel.text = user.userName;
 	self.cityLabel.text = user.city;

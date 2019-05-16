@@ -13,9 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CustomsView : UIView
 
-
 - (void)configureSelf: (VkSberAlbumModel *) model;
-
 
 @end
 

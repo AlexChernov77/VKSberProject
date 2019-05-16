@@ -10,11 +10,11 @@
 
 @implementation VkSberProfileModel
 
-- (instancetype)initWithUserName: (NSString *)name
-					    birthday: (NSString *)bday
-						    city: (NSString *)city
-					  educations: (NSString *) education
-							 url: (NSString *)photoUrl
+- (instancetype)initWithUserName:(NSString *)name
+					    birthday:(NSString *)bday
+						    city:(NSString *)city
+					  educations:(NSString *) education
+							 url:(NSString *)photoUrl
 
 {
 	if (self = [super init])

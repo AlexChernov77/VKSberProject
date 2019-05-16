@@ -51,9 +51,8 @@
 #pragma mark - SwipableViewsDataSource, SwipableViewsDelegate
 
 
-- (void)willSwiped:(SwipeDirection )direction atIndex:(NSInteger)index
+- (void)willSwiped:(SwipeDirection)direction atIndex:(NSInteger)index
 {
-
 }
 
 - (NSInteger)numbersOfViews
