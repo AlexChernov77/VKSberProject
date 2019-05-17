@@ -52,6 +52,9 @@
 - (void)tearDown
 {
 	self.presenter = nil;
+	self.assembly = nil;
+	self.service = nil;
+	self.model = nil;
 	[super tearDown];
 }
 
