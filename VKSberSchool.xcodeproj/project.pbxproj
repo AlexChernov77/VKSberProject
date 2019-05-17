@@ -12,7 +12,6 @@
 		1F1764092240323B0085818C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1764082240323B0085818C /* Assets.xcassets */; };
 		1F17640C2240323B0085818C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F17640A2240323B0085818C /* LaunchScreen.storyboard */; };
 		1F17640F2240323B0085818C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F17640E2240323B0085818C /* main.m */; };
-		1F1764192240323B0085818C /* VKSberSchoolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1764182240323B0085818C /* VKSberSchoolTests.m */; };
 		1F17642C22403E330085818C /* VKSBSwipableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F17642B22403E330085818C /* VKSBSwipableView.m */; };
 		7EBE7C8B2284E12100E3B421 /* VkSberPhotosRequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C8A2284E12100E3B421 /* VkSberPhotosRequestService.m */; };
 		7EBE7C942285FDEF00E3B421 /* VkSberProfilePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE7C932285FDEF00E3B421 /* VkSberProfilePresenter.m */; };
@@ -33,7 +32,8 @@
 		7EE379992289A0F700D9A7EA /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379972289A0F700D9A7EA /* Friends+CoreDataProperties.m */; };
 		7EE3799C2289C0B800D9A7EA /* CustomsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE3799B2289C0B800D9A7EA /* CustomsView.m */; };
 		7EE379E9228C31E900D9A7EA /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE379E7228C30FD00D9A7EA /* OCMock.framework */; };
-		7EE379EC228C321F00D9A7EA /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EE379E7228C30FD00D9A7EA /* OCMock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EE379F4228E117800D9A7EA /* VkSberProfilePresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379F3228E117800D9A7EA /* VkSberProfilePresenterTest.m */; };
+		7EE379F6228ED37400D9A7EA /* VkAuthServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379F5228ED37400D9A7EA /* VkAuthServiceTest.m */; };
 		7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */; };
 		7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */; };
 		7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D622843B5D004E3535 /* VkAuthService.m */; };
@@ -44,6 +44,8 @@
 		7EFB95E822843D1A004E3535 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95E722843D1A004E3535 /* NetworkService.m */; };
 		7EFB95EC22843D49004E3535 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95EB22843D49004E3535 /* Constant.m */; };
 		7EFB95EF228493F8004E3535 /* VkSberCustomUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95EE228493F8004E3535 /* VkSberCustomUILabel.m */; };
+		B535A2FC20C16B9F80669DA5 /* Pods_VKSberSchoolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E8A31AC116C91FE36FC27 /* Pods_VKSberSchoolTests.framework */; };
+		FDF299DDA6453C20CF122142 /* Pods_VKSberSchool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09073FFE8C15017EF0A55A8E /* Pods_VKSberSchool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,13 +65,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7EE379EC228C321F00D9A7EA /* OCMock.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09073FFE8C15017EF0A55A8E /* Pods_VKSberSchool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKSberSchool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6A0C33006AC48CBDCBCC4C /* Pods-VKSberSchoolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKSberSchoolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKSberSchoolTests/Pods-VKSberSchoolTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F1763F9224032380085818C /* VKSberSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKSberSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1763FC224032380085818C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F1763FD224032380085818C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,13 +82,13 @@
 		1F17640D2240323B0085818C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F17640E2240323B0085818C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F1764142240323B0085818C /* VKSberSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKSberSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F1764182240323B0085818C /* VKSberSchoolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKSberSchoolTests.m; sourceTree = "<group>"; };
 		1F17641A2240323B0085818C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = VKSberSchoolTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		1F17642822403C640085818C /* SwipableViewsDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipableViewsDataSource.h; sourceTree = "<group>"; };
 		1F17642922403CFA0085818C /* SwipableViewsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipableViewsDelegate.h; sourceTree = "<group>"; };
 		1F17642A22403E330085818C /* VKSBSwipableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKSBSwipableView.h; sourceTree = "<group>"; };
 		1F17642B22403E330085818C /* VKSBSwipableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKSBSwipableView.m; sourceTree = "<group>"; };
 		1F17642D22403FBD0085818C /* VKSberSchool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VKSberSchool-Bridging-Header.h"; sourceTree = "<group>"; };
+		6C4E8A31AC116C91FE36FC27 /* Pods_VKSberSchoolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKSberSchoolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBE7C892284E12100E3B421 /* VkSberPhotosRequestService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberPhotosRequestService.h; sourceTree = "<group>"; };
 		7EBE7C8A2284E12100E3B421 /* VkSberPhotosRequestService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberPhotosRequestService.m; sourceTree = "<group>"; };
 		7EBE7C922285FDEF00E3B421 /* VkSberProfilePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfilePresenter.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 		7EE3799A2289C0B800D9A7EA /* CustomsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomsView.h; sourceTree = "<group>"; };
 		7EE3799B2289C0B800D9A7EA /* CustomsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomsView.m; sourceTree = "<group>"; };
 		7EE379E7228C30FD00D9A7EA /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = ../OCMock.framework; sourceTree = "<group>"; };
+		7EE379F3228E117800D9A7EA /* VkSberProfilePresenterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberProfilePresenterTest.m; sourceTree = "<group>"; };
+		7EE379F5228ED37400D9A7EA /* VkAuthServiceTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkAuthServiceTest.m; sourceTree = "<group>"; };
 		7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsViewController.h; sourceTree = "<group>"; };
 		7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsViewController.m; sourceTree = "<group>"; };
 		7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfileViewController.h; sourceTree = "<group>"; };
@@ -147,6 +152,9 @@
 		7EFB95EB22843D49004E3535 /* Constant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		7EFB95ED228493F8004E3535 /* VkSberCustomUILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberCustomUILabel.h; sourceTree = "<group>"; };
 		7EFB95EE228493F8004E3535 /* VkSberCustomUILabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberCustomUILabel.m; sourceTree = "<group>"; };
+		8E04B7FEE40A15EAE2528154 /* Pods-VKSberSchoolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKSberSchoolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKSberSchoolTests/Pods-VKSberSchoolTests.release.xcconfig"; sourceTree = "<group>"; };
+		B655049AB4D993EE036B9E2A /* Pods-VKSberSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKSberSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKSberSchool/Pods-VKSberSchool.release.xcconfig"; sourceTree = "<group>"; };
+		F40C6F8ED0E1954FC3DCFF83 /* Pods-VKSberSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKSberSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKSberSchool/Pods-VKSberSchool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF299DDA6453C20CF122142 /* Pods_VKSberSchool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE379E9228C31E900D9A7EA /* OCMock.framework in Frameworks */,
+				B535A2FC20C16B9F80669DA5 /* Pods_VKSberSchoolTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +185,7 @@
 				1F1764172240323B0085818C /* VKSberSchoolTests */,
 				1F1763FA224032380085818C /* Products */,
 				7EE379E6228C30FD00D9A7EA /* Frameworks */,
+				359FC5118A163922002CF5FD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,9 +222,21 @@
 			isa = PBXGroup;
 			children = (
 				1F17641A2240323B0085818C /* Info.plist */,
-				1F1764182240323B0085818C /* VKSberSchoolTests.m */,
+				7EE379F3228E117800D9A7EA /* VkSberProfilePresenterTest.m */,
+				7EE379F5228ED37400D9A7EA /* VkAuthServiceTest.m */,
 			);
 			path = VKSberSchoolTests;
+			sourceTree = "<group>";
+		};
+		359FC5118A163922002CF5FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F40C6F8ED0E1954FC3DCFF83 /* Pods-VKSberSchool.debug.xcconfig */,
+				B655049AB4D993EE036B9E2A /* Pods-VKSberSchool.release.xcconfig */,
+				1E6A0C33006AC48CBDCBCC4C /* Pods-VKSberSchoolTests.debug.xcconfig */,
+				8E04B7FEE40A15EAE2528154 /* Pods-VKSberSchoolTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7EE3799D228C179400D9A7EA /* VkSberAlbum */ = {
@@ -487,6 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				7EE379E7228C30FD00D9A7EA /* OCMock.framework */,
+				09073FFE8C15017EF0A55A8E /* Pods_VKSberSchool.framework */,
+				6C4E8A31AC116C91FE36FC27 /* Pods_VKSberSchoolTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -498,6 +523,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F17641D2240323B0085818C /* Build configuration list for PBXNativeTarget "VKSberSchool" */;
 			buildPhases = (
+				85C6D70F97CCA58287C3DC5C /* [CP] Check Pods Manifest.lock */,
 				1F1763F5224032380085818C /* Sources */,
 				1F1763F6224032380085818C /* Frameworks */,
 				1F1763F7224032380085818C /* Resources */,
@@ -515,10 +541,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F1764202240323B0085818C /* Build configuration list for PBXNativeTarget "VKSberSchoolTests" */;
 			buildPhases = (
+				AC9E8EA10A2A4AF3ED02B27F /* [CP] Check Pods Manifest.lock */,
 				1F1764102240323B0085818C /* Sources */,
 				1F1764112240323B0085818C /* Frameworks */,
 				1F1764122240323B0085818C /* Resources */,
 				7EE379EB228C321900D9A7EA /* CopyFiles */,
+				A467CB00DAAAE71ECD16FDB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -587,6 +615,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		85C6D70F97CCA58287C3DC5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VKSberSchool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A467CB00DAAAE71ECD16FDB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VKSberSchoolTests/Pods-VKSberSchoolTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKSberSchoolTests/Pods-VKSberSchoolTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9E8EA10A2A4AF3ED02B27F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VKSberSchoolTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F1763F5224032380085818C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -631,7 +716,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1764192240323B0085818C /* VKSberSchoolTests.m in Sources */,
+				7EE379F6228ED37400D9A7EA /* VkAuthServiceTest.m in Sources */,
+				7EE379F4228E117800D9A7EA /* VkSberProfilePresenterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +858,7 @@
 		};
 		1F17641E2240323B0085818C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F40C6F8ED0E1954FC3DCFF83 /* Pods-VKSberSchool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -793,6 +880,7 @@
 		};
 		1F17641F2240323B0085818C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B655049AB4D993EE036B9E2A /* Pods-VKSberSchool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -813,6 +901,7 @@
 		};
 		1F1764212240323B0085818C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E6A0C33006AC48CBDCBCC4C /* Pods-VKSberSchoolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -831,6 +920,7 @@
 		};
 		1F1764222240323B0085818C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E04B7FEE40A15EAE2528154 /* Pods-VKSberSchoolTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

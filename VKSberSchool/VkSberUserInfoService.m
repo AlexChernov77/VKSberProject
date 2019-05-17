@@ -26,7 +26,7 @@
 
 @implementation VkSberUserInfoService
 
-- (instancetype) initWithUserID:(NSString *)userID
+- (instancetype)initWithUserID:(NSString *)userID
 {
 	if (self = [super init])
 	{
