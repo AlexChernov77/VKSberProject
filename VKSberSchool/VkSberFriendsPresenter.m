@@ -12,6 +12,7 @@
 #import "VkSberFriendsModel.h"
 #import "AppDelegate.h"
 #import "Friends+CoreDataClass.h"
+#import "VkSberCoreDataService.h"
 
 
 @interface VkSberFriendsPresenter()
@@ -20,6 +21,7 @@
 @property (nonatomic,strong) VkSberFriendsRequestService *service;
 @property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
+@property (nonatomic,strong) VkSberCoreDataService *coreDataService;
 
 @end
 
@@ -31,6 +33,7 @@
 	if(self = [super init])
 	{
 		_service = [VkSberFriendsRequestService new];
+		_coreDataService = [VkSberCoreDataService new];
 	}
 	return self;
 }
@@ -71,9 +74,7 @@
 
 - (NSManagedObjectContext *)coreDataContext
 {
-	UIApplication *application = [UIApplication sharedApplication];
-	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
-	persistentContainer;
+	NSPersistentContainer *container = [self.coreDataService persistentContainer];
 	NSManagedObjectContext *context = container.viewContext;
 	
 	return context;

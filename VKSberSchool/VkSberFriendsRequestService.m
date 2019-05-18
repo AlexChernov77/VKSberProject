@@ -13,6 +13,7 @@
 #import "Friends+CoreDataClass.h"
 #import "NetworkService.h"
 #import "NetworkConfigureRequestService.h"
+#import "VkSberCoreDataService.h"
 #import "Constant.h"
 
 
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
 @property (nonatomic, strong) NSMutableArray <Friends *> *userInfoArray;
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
+@property (nonatomic,strong) VkSberCoreDataService *coreDataService;
 
 @end
 
@@ -37,6 +39,7 @@
 		_userDefaultsService = [NSUserDefaultsService new];
 		_nerworkService = [NetworkService new];
 		_nerworkHepler = [NetworkConfigureRequestService new];
+		_coreDataService = [VkSberCoreDataService new];
 	}
 	return self;
 }
@@ -95,8 +98,7 @@
 
 - (NSManagedObjectContext *)coreDataContext
 {
-	UIApplication *application = [UIApplication sharedApplication];
-	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).persistentContainer;
+	NSPersistentContainer *container = [self.coreDataService persistentContainer];
 	NSManagedObjectContext *context = container.viewContext;
 	
 	return context;

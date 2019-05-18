@@ -70,12 +70,14 @@
 - (void)testAuthorizationFailure
 {
 	//arrange
+	__block BOOL wasCalled = NO;
+	
 	id success = ^(void) {
 		
 	};
 	
 	id failure = ^(void) {
-		
+		wasCalled = YES;
 	};
 	
 	OCMStub([self.service success]).andReturn(success);
@@ -89,6 +91,7 @@
 	//assert
 	OCMVerify([self.service authorization:success failureBlock:failure authToken:token]);
 	OCMVerify([self.service failure]);
+	XCTAssertTrue(wasCalled);
 }
 
 - (void)testStringBetweenStringTrue

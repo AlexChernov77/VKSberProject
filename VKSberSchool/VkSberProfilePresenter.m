@@ -34,8 +34,6 @@
 	return self;
 }
 
-
-
 - (void)loadUser:(void (^)(VkSberProfileModel *))user
 {
 	[self.service getUsers:^(NSArray *urlArray) {

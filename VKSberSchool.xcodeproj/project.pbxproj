@@ -34,6 +34,9 @@
 		7EE379E9228C31E900D9A7EA /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE379E7228C30FD00D9A7EA /* OCMock.framework */; };
 		7EE379F4228E117800D9A7EA /* VkSberProfilePresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379F3228E117800D9A7EA /* VkSberProfilePresenterTest.m */; };
 		7EE379F6228ED37400D9A7EA /* VkAuthServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379F5228ED37400D9A7EA /* VkAuthServiceTest.m */; };
+		7EE379F8228EFE1E00D9A7EA /* VkSberFriendsPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379F7228EFE1E00D9A7EA /* VkSberFriendsPresenterTest.m */; };
+		7EE379FA2290802B00D9A7EA /* VkSberPhotoAlbumPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379F92290802B00D9A7EA /* VkSberPhotoAlbumPresenterTest.m */; };
+		7EE37A00229085A000D9A7EA /* VkSberCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE379FF229085A000D9A7EA /* VkSberCoreDataService.m */; };
 		7EFB95CC22843ACB004E3535 /* VkSberFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */; };
 		7EFB95D122843AF6004E3535 /* VkSberProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D022843AF6004E3535 /* VkSberProfileViewController.m */; };
 		7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB95D622843B5D004E3535 /* VkAuthService.m */; };
@@ -132,6 +135,10 @@
 		7EE379E7228C30FD00D9A7EA /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = ../OCMock.framework; sourceTree = "<group>"; };
 		7EE379F3228E117800D9A7EA /* VkSberProfilePresenterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberProfilePresenterTest.m; sourceTree = "<group>"; };
 		7EE379F5228ED37400D9A7EA /* VkAuthServiceTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkAuthServiceTest.m; sourceTree = "<group>"; };
+		7EE379F7228EFE1E00D9A7EA /* VkSberFriendsPresenterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsPresenterTest.m; sourceTree = "<group>"; };
+		7EE379F92290802B00D9A7EA /* VkSberPhotoAlbumPresenterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberPhotoAlbumPresenterTest.m; sourceTree = "<group>"; };
+		7EE379FE229085A000D9A7EA /* VkSberCoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberCoreDataService.h; sourceTree = "<group>"; };
+		7EE379FF229085A000D9A7EA /* VkSberCoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberCoreDataService.m; sourceTree = "<group>"; };
 		7EFB95CA22843ACB004E3535 /* VkSberFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberFriendsViewController.h; sourceTree = "<group>"; };
 		7EFB95CB22843ACB004E3535 /* VkSberFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkSberFriendsViewController.m; sourceTree = "<group>"; };
 		7EFB95CF22843AF6004E3535 /* VkSberProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSberProfileViewController.h; sourceTree = "<group>"; };
@@ -224,6 +231,8 @@
 				1F17641A2240323B0085818C /* Info.plist */,
 				7EE379F3228E117800D9A7EA /* VkSberProfilePresenterTest.m */,
 				7EE379F5228ED37400D9A7EA /* VkAuthServiceTest.m */,
+				7EE379F7228EFE1E00D9A7EA /* VkSberFriendsPresenterTest.m */,
+				7EE379F92290802B00D9A7EA /* VkSberPhotoAlbumPresenterTest.m */,
 			);
 			path = VKSberSchoolTests;
 			sourceTree = "<group>";
@@ -437,6 +446,8 @@
 				7EE3792922885EA300D9A7EA /* VkSberFriendsRequestService.h */,
 				7EE3792A22885EA300D9A7EA /* VkSberFriendsRequestService.m */,
 				7EE379D4228C1AD700D9A7EA /* NetworkService */,
+				7EE379FE229085A000D9A7EA /* VkSberCoreDataService.h */,
+				7EE379FF229085A000D9A7EA /* VkSberCoreDataService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -703,6 +714,7 @@
 				1F17642C22403E330085818C /* VKSBSwipableView.m in Sources */,
 				7EFB95DE22843C54004E3535 /* VKSberAuthViewController.m in Sources */,
 				7EE37954228952C300D9A7EA /* VkSberProfileAssembly.m in Sources */,
+				7EE37A00229085A000D9A7EA /* VkSberCoreDataService.m in Sources */,
 				1F1763FE224032380085818C /* AppDelegate.m in Sources */,
 				7EFB95D722843B5D004E3535 /* VkAuthService.m in Sources */,
 				7EBE7C9E22863F7A00E3B421 /* VkSberUIImageView+AsyncDownload.m in Sources */,
@@ -716,7 +728,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE379F8228EFE1E00D9A7EA /* VkSberFriendsPresenterTest.m in Sources */,
 				7EE379F6228ED37400D9A7EA /* VkAuthServiceTest.m in Sources */,
+				7EE379FA2290802B00D9A7EA /* VkSberPhotoAlbumPresenterTest.m in Sources */,
 				7EE379F4228E117800D9A7EA /* VkSberProfilePresenterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
