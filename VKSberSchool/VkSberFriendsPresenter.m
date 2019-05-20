@@ -39,7 +39,7 @@
 }
 
 
-- (long long)numberOfEntities
+- (NSInteger)numberOfEntities
 {
 	return self.friendsArray.count;
 }

@@ -11,7 +11,7 @@
 @protocol VkSberPhotoAlbumPresenterOutPutProtocol <NSObject>
 
 - (void)loadPhotos;
-- (long long int)numberOfEntities;
+- (NSInteger)numberOfEntities;
 - (id) entityAt:(NSInteger)index;
 
 @end

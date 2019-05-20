@@ -48,7 +48,7 @@
 }
 
 
-- (long long)numberOfEntities
+- (NSInteger)numberOfEntities
 {
 	return self.photoArray.count;
 }

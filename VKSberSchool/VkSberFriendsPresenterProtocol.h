@@ -11,7 +11,7 @@
 
 @protocol VkSberFriendsPresenterOutPutProtocol <NSObject>
 
-- (long long int)numberOfEntities;
+- (NSInteger)numberOfEntities;
 - (id)entityAt:(NSInteger)index;
 
 @end
