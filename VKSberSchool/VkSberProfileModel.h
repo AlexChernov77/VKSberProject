@@ -10,11 +10,11 @@
 
 @interface VkSberProfileModel : NSObject
 
-@property (strong, nonatomic) NSString *userName;
-@property (strong, nonatomic) NSString *photoURL;
-@property (strong, nonatomic) NSString *education;
-@property (strong, nonatomic) NSString *city;
-@property (strong, nonatomic) NSString *bDay;
+@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, copy) NSString *photoURL;
+@property (nonatomic, copy) NSString *education;
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *bDay;
 
 /**
  Инициализирует модель

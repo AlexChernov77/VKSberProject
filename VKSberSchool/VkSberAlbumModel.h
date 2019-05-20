@@ -10,7 +10,7 @@
 
 @interface VkSberAlbumModel : NSObject
 
-@property (strong, nonatomic) NSString *photoURL;
+@property (nonatomic, copy) NSString *photoURL;
 
 /**
  Инициализирует model

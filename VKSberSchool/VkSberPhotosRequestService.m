@@ -18,7 +18,7 @@
 @property (strong, nonatomic) NSUserDefaultsService *userDefaultsService;
 @property (strong, nonatomic) NetworkService *nerworkService;
 @property (strong, nonatomic) NetworkConfigureRequestService *nerworkHepler;
-@property (strong, nonnull) NSString *userID;
+@property (copy, nonnull) NSString *userID;
 
 @end
 

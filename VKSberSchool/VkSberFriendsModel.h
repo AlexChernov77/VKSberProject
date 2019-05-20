@@ -10,9 +10,9 @@
 
 @interface VkSberFriendsModel : NSObject
 
-@property (strong, nonatomic) NSString *userID;
-@property (strong, nonatomic) NSString *photoURL;
-@property (strong, nonatomic) NSString *userName;
+@property (nonatomic, copy) NSString *userID;
+@property (nonatomic, copy) NSString *photoURL;
+@property (nonatomic, copy) NSString *userName;
 
 /**
  Инициализирует модель

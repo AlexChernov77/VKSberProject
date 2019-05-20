@@ -19,7 +19,7 @@
 @property (nonatomic,strong) VkSberUserInfoService *service;
 @property (nonatomic,strong) VkSberProfileModel *model;
 @property (nonatomic,strong) VkSberPhotoAlbumAssembly *photoAssembly;
-@property (strong,nonnull) NSString *userID;
+@property (copy,nonnull) NSString *userID;
 
 @end
 
