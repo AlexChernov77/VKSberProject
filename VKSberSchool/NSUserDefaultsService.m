@@ -22,7 +22,7 @@
 {
 	if (self = [super init])
 	{
-		self.userDefaults = [NSUserDefaults new];
+		_userDefaults = [NSUserDefaults new];
 	}
 	
 	return self;

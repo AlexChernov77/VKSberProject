@@ -17,10 +17,10 @@
 
 @interface VkSberFriendsPresenter()
 
-@property (nonatomic, copy) NSArray *friendsArray;
+@property (nonatomic,copy) NSArray *friendsArray;
 @property (nonatomic,strong) VkSberFriendsRequestService *service;
-@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
-@property (nonatomic, strong) NSFetchRequest *fetchRequest;
+@property (nonatomic,strong) NSManagedObjectContext *coreDataContext;
+@property (nonatomic,strong) NSFetchRequest *fetchRequest;
 @property (nonatomic,strong) VkSberCoreDataService *coreDataService;
 
 @end
